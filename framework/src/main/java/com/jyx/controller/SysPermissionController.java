@@ -34,7 +34,7 @@ public class SysPermissionController {
     public Map<String, Object> getAllList() {
         Map<String, Object> resdata = new HashMap<>();
         try {
-            Page<SysPermission> list = sysPermissionService.findList(null, null, null);
+            Page<SysPermission> list = sysPermissionService.findEntityPage(null, null, null);
             resdata.put("list", list);
             resdata.put("success", true);
         } catch (Exception e) {
@@ -95,7 +95,7 @@ public class SysPermissionController {
             filters.add(idFilter);
         }
         try {
-            Page<SysPermission> permissions = sysPermissionService.findList(new SysPermission(),null,filters);
+            Page<SysPermission> permissions = sysPermissionService.findEntityPage(null,null,filters);
             obj.getPermissions().clear();
             obj.getPermissions().addAll(permissions.getContent());
             sysRoleService.save(obj);
@@ -116,7 +116,7 @@ public class SysPermissionController {
         try {
             SearchFilter delFilter = new SearchFilter("parentIds", SearchFilter.Operator.LIKE, "," + obj.getId() + ",", SearchFilter.Connector.AND);
             filters.add(delFilter);
-            Page<SysPermission> objs = sysPermissionService.findList(obj, null, filters);
+            Page<SysPermission> objs = sysPermissionService.findEntityPage(obj, null, filters);
             List<SysPermission> delList = new ArrayList<>(objs.getContent());
             delList.add(obj);
             sysPermissionService.delete(delList);
@@ -152,7 +152,7 @@ public class SysPermissionController {
             filters.add(urlFilter);
         }
         try {
-            Page<SysPermission> list = sysPermissionService.findList(searchObj, null, filters);
+            Page<SysPermission> list = sysPermissionService.findEntityPage(searchObj, null, filters);
             if (list == null || list.getTotalElements() == 0) {
                 valid = true;
             }

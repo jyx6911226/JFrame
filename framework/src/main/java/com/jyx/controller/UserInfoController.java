@@ -60,7 +60,7 @@ public class UserInfoController {
             filters.add(telephoneFilter);
         }
         try {
-            Page<UserInfo> list = userInfoService.findUserInfoList(searchObj, pageable, filters);
+            Page<UserInfo> list = userInfoService.findEntityPage(searchObj, pageable, filters);
             resdata.put("pageData", list);
             resdata.put("total", list.getTotalElements());
             resdata.put("draw", draw);
@@ -135,7 +135,7 @@ public class UserInfoController {
             filters.add(nameFilter);
         }
         try {
-            Page<UserInfo> list = userInfoService.findUserInfoList(searchObj, null, filters);
+            Page<UserInfo> list = userInfoService.findEntityPage(searchObj, null, filters);
             if (list == null || list.getTotalElements() == 0) {
                 valid = true;
             }

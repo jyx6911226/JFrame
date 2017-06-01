@@ -56,7 +56,7 @@ public class SysRoleController {
             filters.add(availableFilter);
         }
         try {
-            Page<SysRole> list = sysRoleService.findList(searchObj, pageable, filters);
+            Page<SysRole> list = sysRoleService.findEntityPage(searchObj, pageable, filters);
             resdata.put("pageData", list);
             resdata.put("total", list.getTotalElements());
             resdata.put("draw", draw);
@@ -74,7 +74,7 @@ public class SysRoleController {
     public Map<String, Object> getAllList() {
         Map<String, Object> resdata = new HashMap<>();
         try {
-            Page<SysRole> list = sysRoleService.findList(null, null, null);
+            Page<SysRole> list = sysRoleService.findEntityPage(null, null, null);
             resdata.put("list", list);
             resdata.put("success", true);
         } catch (Exception e) {
@@ -157,7 +157,7 @@ public class SysRoleController {
             filters.add(idFilter);
         }
         try {
-            Page<SysRole> roles = sysRoleService.findList(new SysRole(),null,filters);
+            Page<SysRole> roles = sysRoleService.findEntityPage(null,null,filters);
             obj.getRoleList().clear();
             obj.getRoleList().addAll(roles.getContent());
             userInfoService.save(obj);
@@ -204,7 +204,7 @@ public class SysRoleController {
             filters.add(roleFilter);
         }
         try {
-            Page<SysRole> list = sysRoleService.findList(searchObj, null, filters);
+            Page<SysRole> list = sysRoleService.findEntityPage(searchObj, null, filters);
             if (list == null || list.getTotalElements() == 0) {
                 valid = true;
             }

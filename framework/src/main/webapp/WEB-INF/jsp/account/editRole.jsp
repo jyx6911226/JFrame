@@ -19,6 +19,9 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/css/skins/_all-skins.min.css">
+    <!-- ztree-->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/ztree/css/zTreeStyle/zTreeStyle.css"
+          type="text/css">
     <!-- Bootstrap -->
     <!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/bootstrap-2.3.2/css/bootstrap.min.css" media="screen">  -->
     <!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/bootstrap-2.3.2/css/bootstrap-responsive.min.css" media="screen">  -->
@@ -83,21 +86,72 @@
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/js/lib/lhgdialog-4.2.0/lhgdialog.js?skin=bootstrap2"></script>
 <!-- page script -->
-
+<!-- ztree -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/ztree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/ztree/js/jquery.ztree.excheck.js"></script>
 <script type="text/javascript">
-    //保存权限
+    function ajaxDataFilter(treeId, parentNode, responseData) {
+        return responseData.list.content;
+    }
+    var setting = {
+        data: {
+            simpleData: {
+                enable: true,
+                idKey: "id"
+            }
+        },
+        check: {
+            enable: true
+        },
+        async: {
+            enable: true,
+            url: "${pageContext.request.contextPath}/sysRole/getAllList",
+            dataFilter: ajaxDataFilter
+        },
+        callback: {
+        }
+    };
+    function initZTreeCheck(id) {
+        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+        $.ajax({
+            type: "post",
+            url: "${pageContext.request.contextPath}/sysRole/getListByUserInfo/${obj.id}",
+            contentType:"application/json",
+            dataType: "json",
+            success: function(result) {
+                //setTimeout仅为测试遮罩效果
+                setTimeout(function(){
+                    //异常判断与处理
+                    if (result.success == true) {
+                        $.each( result.list, function(index, role) {
+                            var node = zTree.getNodeByParam("id",role.id);
+                            if(node) {
+                                node.checked = true;
+                            }
+                        });
+                    }else{
+                        $.dialog.alert("获取用户对应角色失败。错误码："+result.error);
+                        return;
+                    }
+                },200);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                $.dialog.alert("获取角色对应权限失败");
+            }
+        });
+    }
+    //保存角色
     function saveRole(){
-        var pids = new Array();
+        var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+        var nodes = zTree.getCheckedNodes(true);
+        var rids = new Array();
         $.each( nodes, function(index, node){
-            //只添加全选中的节点，半选中不添加此权限
-            //if(node.getCheckStatus().half == false) {
-            pids.push(node.id);
-            //}
+            rids.push(node.id);
         });
         $.ajax({
             type: "post",
             url: "${pageContext.request.contextPath}/sysRole/saveRoleList/${obj.id}",
-            data: JSON.stringify(pids),
+            data: JSON.stringify(rids),
             contentType:"application/json",
             dataType: "json",
             success: function(result) {
@@ -118,6 +172,10 @@
         });
     }
     $(document).ready(function () {
+        //获取全部权限
+        $.fn.zTree.init($("#treeDemo"), setting, null);
+        //根据选择的角色设置选中状态
+        initZTreeCheck(${obj.id});
         $("#btn-save").on("click",function(){saveRole();});
     });
 </script>

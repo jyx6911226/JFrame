@@ -50,7 +50,7 @@
         <ol class="breadcrumb">
             <li><a href="${pageContext.request.contextPath}/welcome"><i class="fa fa-dashboard"></i> 首页</a></li>
             <li><a href="${pageContext.request.contextPath}/userInfo/initList"> 资源管理</a></li>
-            <li><a href="${pageContext.request.contextPath}/userInfo/initList"> 角色管理</a></li>
+            <li><a href="${pageContext.request.contextPath}/sysRole/initList"> 角色管理</a></li>
             <li class="active">角色权限挂接</li>
         </ol>
     </section>

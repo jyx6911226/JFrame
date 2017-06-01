@@ -55,7 +55,7 @@ public class UserInfo implements Serializable {
      */
     private Byte state;
     @JsonIgnore
-    @ManyToMany(cascade={ CascadeType.PERSIST})
+    @ManyToMany(cascade={ CascadeType.ALL})
     @JoinTable(name = "sys_user_role",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})

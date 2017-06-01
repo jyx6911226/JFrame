@@ -71,6 +71,22 @@ public class SysRoleController {
         return resdata;
     }
 
+    @RequestMapping("/getAllList")
+    @ResponseBody
+    public Map<String, Object> getAllList() {
+        Map<String, Object> resdata = new HashMap<>();
+        try {
+            Page<SysRole> list = sysRoleService.findList(null, null, null);
+            resdata.put("list", list);
+            resdata.put("success", true);
+        } catch (Exception e) {
+            resdata.put("success", false);
+            resdata.put("error", "数据查询失败");
+            e.printStackTrace();
+        }
+        return resdata;
+    }
+
     @RequestMapping("/getListByUserInfo/{id}")
     @ResponseBody
     public Map<String, Object> getListByUserInfo(@PathVariable(value = "id") UserInfo obj, Model model) {

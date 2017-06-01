@@ -38,9 +38,8 @@ public class SysPermissionController {
     @ResponseBody
     public Map<String, Object> getAllList() {
         Map<String, Object> resdata = new HashMap<>();
-        SysPermission searchObj = new SysPermission();
         try {
-            Page<SysPermission> list = sysPermissionService.findList(searchObj, null, null);
+            Page<SysPermission> list = sysPermissionService.findList(null, null, null);
             resdata.put("list", list);
             resdata.put("success", true);
         } catch (Exception e) {

@@ -3,7 +3,6 @@ package com.jyx.service.impl;
 import java.util.List;
 import javax.annotation.Resource;
 
-import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;

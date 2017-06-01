@@ -89,7 +89,8 @@ public class UtilEncodes {
     /**
      * Xml 转码.
      */
-    public static String escapeXml(String xml) {
+    @SuppressWarnings("deprecation")
+	public static String escapeXml(String xml) {
         return StringEscapeUtils.escapeXml(xml);
     }
 

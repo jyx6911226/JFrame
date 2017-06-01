@@ -3,7 +3,6 @@ package com.jyx.util.utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-import java.util.UUID;
 
 /**
  * HTML转换成pdf工具类

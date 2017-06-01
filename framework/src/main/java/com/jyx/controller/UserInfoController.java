@@ -2,10 +2,8 @@ package com.jyx.controller;
 
 import com.jyx.pojo.UserInfo;
 import com.jyx.service.UserInfoService;
-import com.jyx.util.i18n.I18nUtil;
 import com.jyx.util.jpa.SearchFilter;
 import org.apache.shiro.crypto.hash.Md5Hash;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,8 +12,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -26,9 +22,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("/userInfo")
 public class UserInfoController {
-
-    @Autowired
-    private I18nUtil i18nUtil;
     @Resource
     private UserInfoService userInfoService;
 

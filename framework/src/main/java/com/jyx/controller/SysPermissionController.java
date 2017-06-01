@@ -5,17 +5,12 @@ import com.jyx.pojo.SysRole;
 import com.jyx.service.SysPermissionService;
 import com.jyx.service.SysRoleService;
 import com.jyx.util.jpa.SearchFilter;
-import com.jyx.validation.ValiderLevel1;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.validation.ValidationException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

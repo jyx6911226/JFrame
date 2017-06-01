@@ -14,7 +14,6 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.jyx.filter.KaptchaFilter;
 
 /**
  * Shiro 配置 Apache Shiro 核心通过 Filter 来实现，就好像SpringMvc 通过DispachServlet 来主控制一样。
@@ -38,8 +37,6 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         //
         Map<String, Filter> filtersMap = shiroFilterFactoryBean.getFilters();
-        KaptchaFilter kaptchaFilter = new KaptchaFilter();
-        filtersMap.put("kaptchaFilter", kaptchaFilter);
         shiroFilterFactoryBean.setFilters(filtersMap);
         // 拦截器.
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();

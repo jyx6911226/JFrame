@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.jyx.pojo.UserInfo;
-import org.springframework.data.jpa.repository.Query;
 
 public interface UserInfoDao extends JpaRepository<UserInfo, Long>, JpaSpecificationExecutor<UserInfo> {
     /**

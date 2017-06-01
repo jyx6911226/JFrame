@@ -1,9 +1,7 @@
 package com.jyx.controller;
 
-import com.jyx.pojo.SysPermission;
 import com.jyx.pojo.SysRole;
 import com.jyx.pojo.UserInfo;
-import com.jyx.service.SysPermissionService;
 import com.jyx.service.SysRoleService;
 import com.jyx.service.UserInfoService;
 import com.jyx.util.jpa.SearchFilter;

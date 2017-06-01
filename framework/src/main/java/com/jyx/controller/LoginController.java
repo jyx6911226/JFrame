@@ -1,6 +1,5 @@
 package com.jyx.controller;
 
-import com.jyx.exception.IncorrectCaptchaException;
 import com.jyx.util.i18n.I18nUtil;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;

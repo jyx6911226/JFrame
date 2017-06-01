@@ -53,12 +53,6 @@
     </properties>
 
     <dependencies>
-        <!-- 热启动
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency> -->
         <!-- fastjson（返回String类型的Json字符串） -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -217,12 +211,12 @@
            <artifactId>spring-boot-starter-ws</artifactId>
        </dependency> -->
         <!-- kaptcha(验证码Google kaptcha)-->
-        <!-- 此jar包需要手动下载 -->
+        <!-- 此jar包需要手动下载 
         <dependency>
             <groupId>com.google.code</groupId>
             <artifactId>kaptcha</artifactId>
             <version>2.3.2</version>
-        </dependency>
+        </dependency>-->
         <!-- 发送邮件. -->
         <!-- http://412887952-qq-com.iteye.com/blog/2305992 -->
         <dependency>

@@ -26,7 +26,7 @@ public class SysRole implements Serializable {
     @NotNull
     @Column(nullable = false)
     private String description; // 角色描述,UI界面显示使用
-    private Boolean available; // 是否可用,如果不可用将不会添加给用户
+    private Boolean available;  // 是否可用,如果不可用将不会添加给用户
     // 角色 -- 权限关系：多对多关系;
     @JsonIgnore
     @ManyToMany(cascade={ CascadeType.ALL})

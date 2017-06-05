@@ -70,29 +70,34 @@
 				<div class="col-xs-12">
 					<div class="box">
 						<!-- 模糊查询 start-->
-						<div class="row-fluid">
+						<div class="row-fluid margin">
 							<div class="span12">
 								<div class="btn-toolbar">
 									<div class="pull-right">
 										<div class="input-append">
-											<input type="text" placeholder="角色名称" id="fuzzy-search">
-											<div class="btn-group">
-												<button type="button" class="btn" id="btn-simple-search">
-													<i class="fa fa-search"></i>
-												</button>
+											<div class="input-group">
+												<!-- /btn-group -->
+												<input type="text" placeholder="角色名称" id="fuzzy-search"
+													class="form-control">
+												<div class="input-group-btn">
+													<button type="button" class="btn" id="btn-simple-search">
+														<i class="fa fa-search"></i>
+													</button>
+
+												</div>
 												<button type="button" class="btn" title="高级查询"
 													id="toggle-advanced-search">
 													<i class="fa fa-angle-double-down"></i>
 												</button>
+												<button type="button" class="btn btn-primary" id="btn-add">
+													<i class="fa fa-plus"></i> 添加
+												</button>
+												<button type="button" class="btn btn-danger" id="btn-del">
+													<i class="fa fa-remove"></i> 删除
+												</button>
 											</div>
 										</div>
 									</div>
-									<button type="button" class="btn btn-primary" id="btn-add">
-										<i class="fa fa-plus"></i> 添加
-									</button>
-									<button type="button" class="btn btn-danger" id="btn-del">
-										<i class="fa fa-remove"></i> 批量删除
-									</button>
 								</div>
 							</div>
 						</div>
@@ -108,17 +113,6 @@
 									<option value="true">可用</option>
 									<option value="false">禁用</option>
 								</select>
-								<!-- <span>在线状态:</span>
-                            <select class="input-small" id="status-search">
-                                <option value="">全部</option>
-                                <option value="1">在线</option>
-                                <option value="0">离线</option>
-                            </select>
-                            <select class="input-small" id="role-search">
-                                <option value="">全部</option>
-                                <option value="1">管理员</option>
-                                <option value="0">操作员</option>
-                            </select> -->
 								<button type="button" class="btn" id="btn-advanced-search">
 									<i class="fa fa-search"></i> 查询
 								</button>

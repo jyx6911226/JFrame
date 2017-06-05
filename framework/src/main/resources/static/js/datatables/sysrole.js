@@ -50,7 +50,7 @@ $(function (){
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,//会显示省略号的列，需要用title属性实现划过时显示全部文本的效果
             },
             {
-            	//className : "ellipsis",	
+            	className : "ellipsis",	
             	data: "role"
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,
             	//固定列宽，但至少留下一个活动列不要固定宽度，让表格自行调整。不要将所有列都指定列宽，否则页面伸缩时所有列都会随之按比例伸缩。
@@ -58,7 +58,7 @@ $(function (){
 				//width : "20px"			
             },
             {
-            	//className : "ellipsis",	
+            	className : "ellipsis",	
             	data: "name"
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,
             	//固定列宽，但至少留下一个活动列不要固定宽度，让表格自行调整。不要将所有列都指定列宽，否则页面伸缩时所有列都会随之按比例伸缩。

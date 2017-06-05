@@ -184,39 +184,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!-- spring data 查询插件 querydsl
-        <dependency>
-            <groupId>com.querydsl</groupId>
-            <artifactId>querydsl-jpa</artifactId>
-        </dependency>-->
-        <!-- 以下两个模板可以共存，但使用模板时不要再使用jsp，否则jsp的路径需要重新配置 -->
-        <!-- thymeleaf-freemarker 模板-->
-        <!--
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-         -->
-        <!-- freemarker 模板-->
-        <!--
-       <dependency>
-           <groupId>org.springframework.boot</groupId>
-           <artifactId>spring-boot-starter-freemarker</artifactId>
-       </dependency>-->
-
-        <!-- Spring Web Services-->
-        <!-- 配置略
-       <dependency>
-           <groupId>org.springframework.boot</groupId>
-           <artifactId>spring-boot-starter-ws</artifactId>
-       </dependency> -->
-        <!-- kaptcha(验证码Google kaptcha)-->
-        <!-- 此jar包需要手动下载 
-        <dependency>
-            <groupId>com.google.code</groupId>
-            <artifactId>kaptcha</artifactId>
-            <version>2.3.2</version>
-        </dependency>-->
         <!-- 发送邮件. -->
         <!-- http://412887952-qq-com.iteye.com/blog/2305992 -->
         <dependency>
@@ -234,12 +201,6 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.collections/google-collections -->
-        <!-- 		<dependency>
-                    <groupId>com.google.collections</groupId>
-                    <artifactId>google-collections</artifactId>
-                    <version>1.0-rc2</version>
-                </dependency> -->
         <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
         <dependency>
             <groupId>org.reflections</groupId>
@@ -274,18 +235,6 @@
             <artifactId>jjwt</artifactId>
             <version>0.6.0</version>
         </dependency>
-        <!-- spring-boot-admin 监控（admin为监控）
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>1.3.2</version>
-        </dependency> -->
-        <!-- maven Nexus私库测试
-        <dependency>
-		  <groupId>com.freemarker.shirotag</groupId>
-		  <artifactId>shirotag</artifactId>
-		  <version>0.1</version>
-		</dependency> -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

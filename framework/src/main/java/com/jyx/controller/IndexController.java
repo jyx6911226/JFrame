@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
+	
     @RequestMapping({"/", "/index"})
     public String toindex(HttpServletRequest request, Map<String, Object> map) {
         return "/index";

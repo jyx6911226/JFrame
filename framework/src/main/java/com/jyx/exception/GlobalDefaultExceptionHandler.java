@@ -40,7 +40,7 @@ public class GlobalDefaultExceptionHandler {
         } else if (e.getClass().isInstance(NumberFormatException.class)) {
             System.out.println("数字转换异常");
         } else if (e.getClass().isInstance(BusiException.class)) {
-        	System.out.println(e.getMessage());
+        	System.out.println("业务异常："+e.getMessage());
         } else {
             System.out.println("未知异常");
         }

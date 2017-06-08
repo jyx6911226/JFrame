@@ -1,17 +1,17 @@
 var _table;
 $(function (){
 	var $wrapper = $('#div-table-container');
-	var $table = $('#table-user');
+	var $table = $('#table-data');
 
 	_table = $table.dataTable($.extend(true,{},CONSTANT.DATA_TABLES.DEFAULT_OPTION, {
 		ajax : function(data, callback, settings) {//ajax配置为function,手动调用异步查询
 			//手动控制遮罩
 			$wrapper.spinModal();
 			//封装请求参数
-			var param = userManage.getQueryCondition(data);
+			var param = dataManage.getQueryCondition(data);
 			$.ajax({
 		            type: "post",
-		            url: "./getAccountList",
+		            url: "./getList",
 		            cache : false,	//禁用缓存
 		            data: param,	//传入已封装的参数
 		            dataType: "json",
@@ -44,19 +44,11 @@ $(function (){
 		},
         columns: [
             CONSTANT.DATA_TABLES.COLUMN.CHECKBOX,
-            {
+            //{
             	//className : "ellipsis",	//文字过长时用省略号显示，CSS实现
-            	data: "id"
+            //	data: "id"
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,//会显示省略号的列，需要用title属性实现划过时显示全部文本的效果
-            },
-            {
-            	//className : "ellipsis",	
-            	data: "username"
-            	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,
-            	//固定列宽，但至少留下一个活动列不要固定宽度，让表格自行调整。不要将所有列都指定列宽，否则页面伸缩时所有列都会随之按比例伸缩。
-				//切记设置table样式为table-layout:fixed; 否则列宽不会强制为指定宽度，也不会出现省略号。
-				//width : "20px"			
-            },
+            //},
             {
             	//className : "ellipsis",	
             	data: "name"
@@ -65,18 +57,15 @@ $(function (){
 				//切记设置table样式为table-layout:fixed; 否则列宽不会强制为指定宽度，也不会出现省略号。
 				//width : "20px"			
             },
+            {
+            	//className : "ellipsis",	
+            	data: "code"
+            	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,
+            	//固定列宽，但至少留下一个活动列不要固定宽度，让表格自行调整。不要将所有列都指定列宽，否则页面伸缩时所有列都会随之按比例伸缩。
+				//切记设置table样式为table-layout:fixed; 否则列宽不会强制为指定宽度，也不会出现省略号。
+				//width : "20px"			
+            },
 			{
-				data : "email",
-				width : "80px"
-			},
-			{
-				data : "telephone",
-				width : "80px"
-			},
-			 {
-				data: "state"
-				//width : "120px"
-			},{
 				className : "td-operation",
 				data: null,
 				defaultContent:"",
@@ -86,10 +75,9 @@ $(function (){
         ],
         "createdRow": function ( row, data, index ) {
             var $btnEdit = $('<button type="button" class="btn btn-small btn-primary btn-edit">修改</button>');
-            var $btnRole = $('<button type="button" id = "btn_role" class="btn btn-small btn-info btn-edit">角色挂接</button>');
+            var $btnRole = $('<button type="button" id = "btn_detail" class="btn btn-small btn-info btn-edit">明细</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
-            //var $btnView = $('<button type="button" class="btn btn-small btn-danger btn-del">查看</button>');
-            $('td', row).eq(7).append($btnEdit).append($btnRole).append($btnDel);
+            $('td', row).eq(3).append($btnEdit).append($btnRole).append($btnDel);
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调
@@ -101,7 +89,7 @@ $(function (){
 	})).api();//此处需调用api()方法,否则返回的是JQuery对象而不是DataTables的API对象
 	//添加
 	$("#btn-add").click(function(){		
-		userManage.addItemInit();
+		dataManage.addItemInit();
 	});
 	//删除
 	$("#btn-del").click(function(){
@@ -110,11 +98,11 @@ $(function (){
         	var item = _table.row($(this).closest('tr')).data();
         	arrItemId.push(item);
         });
-		userManage.deleteItem(arrItemId);
+		dataManage.deleteItem(arrItemId);
 	});
 	
 	$("#btn-simple-search").click(function(){
-		userManage.fuzzySearch = true;		
+		dataManage.fuzzySearch = true;		
 		//reload效果与draw(true)或者draw()类似,draw(false)则可在获取新数据的同时停留在当前页码,可自行试验
 //		_table.ajax.reload();
 //		_table.draw(false);
@@ -122,16 +110,16 @@ $(function (){
 	});
 	
 	$("#btn-advanced-search").click(function(){
-		userManage.fuzzySearch = false;
+		dataManage.fuzzySearch = false;
 		_table.draw();
 	});
 	
 	$("#btn-save-add").click(function(){
-		userManage.addItemSubmit();
+		dataManage.addItemSubmit();
 	});
 	
 	$("#btn-save-edit").click(function(){
-		userManage.editItemSubmit();
+		dataManage.editItemSubmit();
 	});
 	
 	//行点击事件
@@ -139,8 +127,8 @@ $(function (){
 		$(this).addClass("active").siblings().removeClass("active");
 		//获取该行对应的数据
 		var item = _table.row($(this).closest('tr')).data();
-		userManage.currentItem = item;
-		userManage.showItemDetail(item);
+		dataManage.currentItem = item;
+		dataManage.showItemDetail(item);
     });
 	
 	$table.on("change",":checkbox",function() {
@@ -159,19 +147,19 @@ $(function (){
     	//点击编辑按钮
         var item = _table.row($(this).closest('tr')).data();
 		$(this).closest('tr').addClass("active").siblings().removeClass("active");
-		userManage.currentItem = item;
-		userManage.editItemInit(item);
-	}).on("click","#btn_role",function() {
-        //点击权限挂接按钮
+		dataManage.currentItem = item;
+		dataManage.editItemInit(item);
+	}).on("click","#btn_detail",function() {
+        //点击明细
         var item = _table.row($(this).closest('tr')).data();
         $(this).closest('tr').addClass("active").siblings().removeClass("active");
-        userManage.currentItem = item;
-        userManage.roleItemInit(item);
+        dataManage.currentItem = item;
+        dataManage.roleItemInit(item);
     }).on("click",".btn-del",function() {
 		//点击删除按钮
 		var item = _table.row($(this).closest('tr')).data();
 		$(this).closest('tr').addClass("active").siblings().removeClass("active");
-		userManage.deleteItem([item]);
+		dataManage.deleteItem([item]);
 	});
 	
 	$("#toggle-advanced-search").click(function(){
@@ -186,15 +174,15 @@ $(function (){
 	//});
 	
 	//$("#btn-view-edit").click(function(){
-	//	userManage.editItemInit(userManage.currentItem);
+	//	dataManage.editItemInit(dataManage.currentItem);
 	//});
 	
 	//$(".btn-cancel").click(function(){
-		//userManage.showItemDetail(userManage.currentItem);
+		//dataManage.showItemDetail(dataManage.currentItem);
 	//});
 });
 
-var userManage = {
+var dataManage = {
 	currentItem : null,
 	fuzzySearch : true,
 	getQueryCondition : function(data) {
@@ -224,14 +212,12 @@ var userManage = {
 			param.orderDir = data.order[0].dir;
 		}
 		//组装查询参数
-		param.fuzzySearch = userManage.fuzzySearch;
-		if (userManage.fuzzySearch) {
-			param.username = $("#fuzzy-search").val();
+		param.fuzzySearch = dataManage.fuzzySearch;
+		if (dataManage.fuzzySearch) {
+			param.name = $("#fuzzy-search").val();
 		}else{
-			param.username = $("#username-search").val();
 			param.name = $("#name-search").val();
-			param.telephone = $("#telephone-search").val();
-			param.email = $("#email-search").val();
+			param.code = $("#code-search").val();
 		}
 		//组装分页参数
 		param.startIndex = data.start;

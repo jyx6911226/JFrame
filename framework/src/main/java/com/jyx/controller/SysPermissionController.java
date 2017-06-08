@@ -23,7 +23,8 @@ public class SysPermissionController {
     private SysRoleService sysRoleService;
     @Resource
     private SysPermissionService sysPermissionService;
-
+    
+    
     @RequestMapping("/initList")
     public String initAccountList() {
         return "syspermission/list";

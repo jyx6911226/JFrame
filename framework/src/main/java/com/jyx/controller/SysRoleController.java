@@ -5,6 +5,8 @@ import com.jyx.pojo.UserInfo;
 import com.jyx.service.SysRoleService;
 import com.jyx.service.UserInfoService;
 import com.jyx.util.jpa.SearchFilter;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,15 +24,19 @@ import java.util.Map;
 @Controller
 @RequestMapping("/sysRole")
 public class SysRoleController {
+	
     @Resource
     private SysRoleService sysRoleService;
     @Resource
     private UserInfoService userInfoService;
+    
+    @RequiresPermissions(value={"SysRole-List"})
     @RequestMapping("/initList")
-    public String initAccountList() {
+    public String initList() {
         return "sysrole/list";
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Search-Interf"})
     @RequestMapping("/getList")
     @ResponseBody
     public Map<String, Object> getList(SysRole searchObj,
@@ -68,7 +74,8 @@ public class SysRoleController {
         }
         return resdata;
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Search-Interf"})
     @RequestMapping("/getAllList")
     @ResponseBody
     public Map<String, Object> getAllList() {
@@ -84,7 +91,8 @@ public class SysRoleController {
         }
         return resdata;
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Search-Interf"})
     @RequestMapping("/getListByUserInfo/{id}")
     @ResponseBody
     public Map<String, Object> getListByUserInfo(@PathVariable(value = "id") UserInfo obj, Model model) {
@@ -101,12 +109,14 @@ public class SysRoleController {
         }
         return resdata;
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Add-Btn"})
     @RequestMapping("/initAdd")
     public String initAdd() {
         return "sysrole/add";
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Add-Interf"})
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysRole obj) {
@@ -121,25 +131,29 @@ public class SysRoleController {
         }
         return resdata;
     }
-
+    
+    @RequiresPermissions(value={"SysRole-View-Btn"})
     @RequestMapping("/initView/{id}")
     public String initView(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/view";
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Update-Btn"})
     @RequestMapping("/initEdit/{id}")
     public String initEdit(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/add";
     }
 
+    @RequiresPermissions(value={"SysRole-Update-Btn"})
     @RequestMapping("/initEditPermission/{id}")
     public String initEditPermission(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/editPermission";
     }
-
+    
+    @RequiresPermissions(value={"SysRole-Update-Interf"})
     @RequestMapping(value = "/saveRoleList/{id}",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> saveRoleList(@PathVariable(value = "id") UserInfo obj,@RequestBody List<Long> rids, Model model) {
@@ -170,6 +184,7 @@ public class SysRoleController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysRole-Del-Interf"})
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<SysRole> objs) {
@@ -184,7 +199,8 @@ public class SysRoleController {
         }
         return resdata;
     }
-
+    
+    @RequiresPermissions(value={"SysRole-List"})
     @RequestMapping({"/validUnique"})
     @ResponseBody
     public Map<String, Boolean> validUnique(SysRole searchObj) {

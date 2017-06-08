@@ -133,7 +133,7 @@
 						</div>
 						<!-- 模糊查询 end -->
 						<!-- /.box-header -->
-						<div class="box-body table-responsive no-padding"
+						<div class="box-body"
 							id="div-table-container">
 							<table id="table-user" class="table table-bordered table-striped">
 								<thead>

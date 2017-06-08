@@ -48,14 +48,14 @@
     <div class="col-md-12">
         <div class="box box-info">
             <div class="col-md-6">
-                <p class="login-box-msg">
-                <div id="successAlert" class="alert alert-success hide">
-                    <strong>保存成功！</strong>
+                <div class="login-box-msg">
+	                <div id="successAlert" class="alert alert-success hide">
+	                    <strong>保存成功！</strong>
+	                </div>
+	                <div id="warnAlert" class="alert alert-warning hide">
+	                    <strong>操作失败！</strong>
+	                </div>
                 </div>
-                <div id="warnAlert" class="alert alert-warning hide">
-                    <strong>操作失败！</strong>
-                </div>
-                </p>
 
                 <form id="defaultForm" action="#" method="post">
                     <input type="hidden" id="userInfo_id" name="id" value="${obj.id}">

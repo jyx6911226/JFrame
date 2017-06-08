@@ -3,6 +3,8 @@ package com.jyx.controller;
 import com.jyx.pojo.UserInfo;
 import com.jyx.service.UserInfoService;
 import com.jyx.util.jpa.SearchFilter;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,12 +26,13 @@ import java.util.Map;
 public class UserInfoController {
     @Resource
     private UserInfoService userInfoService;
-
+    
+    @RequiresPermissions(value={"UserInfo-List"})
     @RequestMapping("/initList")
     public String initAccountList() {
         return "account/list";
     }
-
+    @RequiresPermissions(value={"UserInfo-Search-Interf"})
     @RequestMapping("/getAccountList")
     @ResponseBody
     public Map<String, Object> getAccountList(UserInfo searchObj,
@@ -73,23 +76,27 @@ public class UserInfoController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"UserInfo-Add-Btn"})
     @RequestMapping("/initAdd")
     public String initAdd() {
         return "account/add";
     }
 
+    @RequiresPermissions(value={"UserInfo-View-Btn"})
     @RequestMapping("/initView/{id}")
     public String initView(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
         return "account/view";
     }
 
+    @RequiresPermissions(value={"UserInfo-Add-Btn"})
     @RequestMapping("/initEdit/{id}")
     public String initEdit(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
         return "account/add";
     }
 
+    @RequiresPermissions(value={"UserInfo-Update-Btn"})
     @RequestMapping("/initEditRole/{id}")
     public String initEditRole(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
@@ -97,10 +104,10 @@ public class UserInfoController {
     }
 
     //管理员添加用户
+    @RequiresPermissions(value={"UserInfo-Add-Interf"})
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(UserInfo obj, Model model) {
-        System.out.println("add=======================>" + obj.toString());
         Map<String, Object> resdata = new HashMap<>();
         try {
             //新添加的账号默认密码为123456
@@ -120,6 +127,7 @@ public class UserInfoController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"UserInfo-List"})
     @RequestMapping({"/validUnique"})
     @ResponseBody
     public Map<String, Boolean> validUnique(UserInfo searchObj) {
@@ -145,7 +153,8 @@ public class UserInfoController {
         map.put("valid", valid);
         return map;
     }
-
+    
+    @RequiresPermissions(value={"UserInfo-Del-Interf"})  
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<UserInfo> objs) {

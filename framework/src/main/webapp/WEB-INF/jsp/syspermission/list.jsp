@@ -239,16 +239,6 @@
                     validators: {
                         notEmpty: {
                             message: '资源地址不能为空'
-                        },
-                        remote: {
-                            message: 'URL已经存在',
-                            url: '${pageContext.request.contextPath}/sysPermission/validUnique',
-                            data: {
-                                id: function () {
-                                    return $("#node_id").val();
-                                }
-                            },
-                            delay: 2000
                         }
                     }
                 }

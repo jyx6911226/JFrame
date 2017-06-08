@@ -49,7 +49,7 @@ public class UserInfo implements Serializable {
 	 */
 	private Byte state;
 	@JsonIgnore
-	@ManyToMany(cascade = { CascadeType.ALL })
+	@ManyToMany(cascade = { CascadeType.ALL },fetch=FetchType.EAGER)
 	@JoinTable(name = "sys_user_role", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "role_id") })
 	private List<SysRole> roleList; // 一个用户具有多个角色

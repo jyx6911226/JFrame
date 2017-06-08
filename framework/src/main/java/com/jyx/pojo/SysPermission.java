@@ -15,7 +15,7 @@ public class SysPermission implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
-    private Long id;// 主键.
+    private Long id;// 主键
     @NotNull
     @Column(unique = true, nullable = false)
     private String name;// 名称.
@@ -29,6 +29,7 @@ public class SysPermission implements Serializable {
     @NotNull
     @Column(nullable = false)
     private Long parentId;        // 父编号
+    @Column(nullable = false)
     private String parentIds;    // 父编号列表
     private Boolean available = Boolean.FALSE;
     @JsonIgnore

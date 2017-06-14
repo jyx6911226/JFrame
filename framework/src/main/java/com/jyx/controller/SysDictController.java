@@ -4,6 +4,7 @@ import com.jyx.pojo.SysDict;
 import com.jyx.service.SysDictService;
 import com.jyx.util.jpa.SearchFilter;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -25,11 +26,13 @@ public class SysDictController {
     @Resource
     private SysDictService sysDictService;
     
+    @RequiresPermissions(value={"SysDict-List"})
     @RequestMapping("/initList")
     public String initList() {
         return "dict/list";
     }
     
+    @RequiresPermissions(value={"SysDict-Search-Interf"})
     @RequestMapping("/getList")
     @ResponseBody
     public Map<String, Object> getList(SysDict searchObj,
@@ -67,29 +70,34 @@ public class SysDictController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysDict-Add-Btn"})
     @RequestMapping("/initAdd")
     public String initAdd() {
         return "dict/add";
     }
 
+    @RequiresPermissions(value={"SysDict-View"})
     @RequestMapping("/initView/{id}")
     public String initView(@PathVariable(value = "id") SysDict obj, Model model) {
         model.addAttribute("obj", obj);
         return "dict/view";
     }
 
+    @RequiresPermissions(value={"SysDict-Update-Btn"})
     @RequestMapping("/initEdit/{id}")
     public String initEdit(@PathVariable(value = "id") SysDict obj, Model model) {
         model.addAttribute("obj", obj);
         return "dict/add";
     }
 
+    @RequiresPermissions(value={"SysDict-UpdateDetail-Btn"})
     @RequestMapping("/initEditDetail/{id}")
-    public String initEditRole(@PathVariable(value = "id") SysDict obj, Model model) {
+    public String initEditDetail(@PathVariable(value = "id") SysDict obj, Model model) {
         model.addAttribute("obj", obj);
         return "dict/editDetail";
     }
-
+    
+    @RequiresPermissions(value={"SysDict-Add-Interf"})
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysDict obj, Model model) {
@@ -105,6 +113,7 @@ public class SysDictController {
         return resdata;
     }
     
+    @RequiresPermissions(value={"SysDict-Del-Interf"})
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<SysDict> objs) {
@@ -120,6 +129,7 @@ public class SysDictController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysDict-List"})
     @RequestMapping({"/validUnique"})
     @ResponseBody
     public Map<String, Boolean> validUnique(SysDict searchObj) {

@@ -71,7 +71,6 @@ public class SysPermissionController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysPermission obj) {
-        System.out.println("add:" + obj.toString());
         Map<String, Object> resdata = new HashMap<>();
         try {
             sysPermissionService.save(obj);

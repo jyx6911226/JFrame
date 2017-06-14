@@ -5,6 +5,7 @@ import com.jyx.pojo.SysDictDetail;
 import com.jyx.service.SysDictDetailService;
 import com.jyx.util.jpa.SearchFilter;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,12 +27,14 @@ public class SysDictDetailController {
     @Resource
     private SysDictDetailService sysDictDetailService;
     
+    @RequiresPermissions(value={"SysDictDetail-ListByDict"})
     @RequestMapping("/initList/{id}")
     public String initList(@PathVariable(value = "id") SysDict obj, Model model) {
     	model.addAttribute("obj", obj);
         return "dict/detail/list";
     }
     
+    @RequiresPermissions(value={"SysDictDetail-Search-Interf"})
     @RequestMapping("/getList")
     @ResponseBody
     public Map<String, Object> getList(SysDictDetail searchObj,
@@ -73,7 +76,8 @@ public class SysDictDetailController {
         }
         return resdata;
     }
-
+    
+    @RequiresPermissions(value={"SysDictDetail-GetListByDict-Interf"})
     @RequestMapping("/getListByDict/{id}")
     @ResponseBody
     public Map<String, Object> getListByDict(@PathVariable(value = "id") SysDict obj) {
@@ -96,6 +100,7 @@ public class SysDictDetailController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysDictDetail-Add-Interf"})
     @RequestMapping( path = "/{dictId}",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(@PathVariable(value = "dictId") SysDict sysDict, SysDictDetail obj, Model model) {
@@ -111,7 +116,30 @@ public class SysDictDetailController {
         }
         return resdata;
     }
+    
+    @RequiresPermissions(value={"SysDictDetail-Del-Interf"})
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Map<String, Object> delete(@PathVariable(value = "id") SysDictDetail obj) {
+        Map<String, Object> resdata = new HashMap<>();
+        List<SearchFilter> filters = new ArrayList<>();
+        try {
+            SearchFilter delFilter = new SearchFilter("parentIds", SearchFilter.Operator.LIKE, "," + obj.getId() + ",", SearchFilter.Connector.AND);
+            filters.add(delFilter);
+            Page<SysDictDetail> objs = sysDictDetailService.findEntityPage(obj, null, filters);
+            List<SysDictDetail> delList = new ArrayList<>(objs.getContent());
+            delList.add(obj);
+            sysDictDetailService.delete(delList);
+            resdata.put("success", true);
+        } catch (Exception e) {
+            resdata.put("success", false);
+            resdata.put("error", "数据删除失败");
+            e.printStackTrace();
+        }
+        return resdata;
+    }
 
+    @RequiresPermissions(value={"SysDictDetail-ListByDict"})
     @RequestMapping({"/validUnique"})
     @ResponseBody
     public Map<String, Boolean> validUnique(SysDictDetail searchObj, String dictId) {
@@ -149,26 +177,5 @@ public class SysDictDetailController {
         }
         map.put("valid", valid);
         return map;
-    }
-
-    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
-    public Map<String, Object> delete(@PathVariable(value = "id") SysDictDetail obj) {
-        Map<String, Object> resdata = new HashMap<>();
-        List<SearchFilter> filters = new ArrayList<>();
-        try {
-            SearchFilter delFilter = new SearchFilter("parentIds", SearchFilter.Operator.LIKE, "," + obj.getId() + ",", SearchFilter.Connector.AND);
-            filters.add(delFilter);
-            Page<SysDictDetail> objs = sysDictDetailService.findEntityPage(obj, null, filters);
-            List<SysDictDetail> delList = new ArrayList<>(objs.getContent());
-            delList.add(obj);
-            sysDictDetailService.delete(delList);
-            resdata.put("success", true);
-        } catch (Exception e) {
-            resdata.put("success", false);
-            resdata.put("error", "数据删除失败");
-            e.printStackTrace();
-        }
-        return resdata;
     }
 }

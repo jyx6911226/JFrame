@@ -7,6 +7,7 @@ import com.jyx.service.SysDictDetailService;
 import com.jyx.util.jpa.DynamicSpecifications;
 import com.jyx.util.jpa.SearchFilter;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -24,6 +25,10 @@ public class SysDictDetailServiceImpl implements BaseService<SysDictDetail>,SysD
 	
 	@Override
 	public void save(SysDictDetail entity) throws Exception {
+		if(entity.getCreatedTime() == null){
+			entity.setCreatedTime(new Date());
+		}
+		entity.setLastUpdateTime(new Date());
 		sysDictDetailDao.save(entity);
 	}
 

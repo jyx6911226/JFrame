@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,14 +68,9 @@
 					</div>
 					<form id="defaultForm" action="#" method="post">
 						<input type="hidden" id="sysdict_id" name="id" value="${obj.id}">
-						<c:if test="${!empty obj.createdTime}">
-							<input type="hidden" name="createdTime"
-								value="${obj.createdTime}">
-						</c:if>
-						<c:if test="${!empty obj.lastUpdateTime}">
-							<input type="hidden" name="lastUpdateTime"
-								value="${obj.lastUpdateTime}">
-						</c:if>
+						<input type="hidden" name="createdTime" value="${obj.createdTime}">
+						<input type="hidden" name="lastUpdateTime"
+							value="${obj.lastUpdateTime}">
 						<div class="form-group">
 							<label>名称</label> <input type="text" id="sysdict_name"
 								name="name" value="${obj.name}" class="form-control"
@@ -203,30 +197,22 @@
 													}
 												},
 												submitHandler : function(
-														validator, form,
-														submitButton) {
-													$
-															.ajax({
-																type : 'post',
-																url : '${pageContext.request.contextPath}/dict/',
-																data : form
-																		.serialize(),
-																success : function(
-																		data) {
-																	if (data.success == true) {
-																		$(
-																				"#successAlert")
-																				.removeClass(
-																						"hide");
-																		window.location.href = "${pageContext.request.contextPath}/dict/initList";
-																	} else {
-																		$(
-																				"#warnAlert")
-																				.removeClass(
-																						"hide");
-																	}
+													validator, form,
+													submitButton) {
+													$.ajax({
+															type : 'post',
+															url : '${pageContext.request.contextPath}/dict/',
+															data : form.serialize(),
+															success : function(
+																	data) {
+																if (data.success == true) {
+																	$("#successAlert").removeClass("hide");
+																	window.location.href = "${pageContext.request.contextPath}/dict/initList";
+																} else {
+																	$("#warnAlert").removeClass("hide");
 																}
-															});
+															}
+														});
 												}
 											});
 						});

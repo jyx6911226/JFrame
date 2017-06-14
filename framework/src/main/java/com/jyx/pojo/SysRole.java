@@ -18,14 +18,16 @@ public class SysRole implements Serializable {
     @GeneratedValue
     private Long id; // 编号
     @NotNull
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 32)
     private String role; // 角色标识程序中判断使用,如"admin",这个是唯一的:
     @NotNull
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 32)
     private String name; // 角色名称
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String description; // 角色描述,UI界面显示使用
+    @NotNull
+    @Column
     private Boolean available;  // 是否可用,如果不可用将不会添加给用户
     // 角色 -- 权限关系：多对多关系;
     @JsonIgnore

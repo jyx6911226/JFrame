@@ -104,6 +104,21 @@ public class SysDictController {
         }
         return resdata;
     }
+    
+    @RequestMapping(method = RequestMethod.DELETE)
+    @ResponseBody
+    public Map<String, Object> delete(@RequestBody List<SysDict> objs) {
+        Map<String, Object> resdata = new HashMap<>();
+        try {
+            sysDictService.delete(objs);
+            resdata.put("success", true);
+        } catch (Exception e) {
+            resdata.put("success", false);
+            resdata.put("error", "数据删除失败");
+            e.printStackTrace();
+        }
+        return resdata;
+    }
 
     @RequestMapping({"/validUnique"})
     @ResponseBody
@@ -133,20 +148,5 @@ public class SysDictController {
         }
         map.put("valid", valid);
         return map;
-    }
-     
-    @RequestMapping(method = RequestMethod.DELETE)
-    @ResponseBody
-    public Map<String, Object> delete(@RequestBody List<SysDict> objs) {
-        Map<String, Object> resdata = new HashMap<>();
-        try {
-            sysDictService.delete(objs);
-            resdata.put("success", true);
-        } catch (Exception e) {
-            resdata.put("success", false);
-            resdata.put("error", "数据删除失败");
-            e.printStackTrace();
-        }
-        return resdata;
     }
 }

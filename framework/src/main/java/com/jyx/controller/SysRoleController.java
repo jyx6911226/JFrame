@@ -75,7 +75,7 @@ public class SysRoleController {
         return resdata;
     }
     
-    @RequiresPermissions(value={"SysRole-Search-Interf"})
+    @RequiresPermissions(value={"SysRole-SearchAll-Interf"})
     @RequestMapping("/getAllList")
     @ResponseBody
     public Map<String, Object> getAllList() {
@@ -92,7 +92,7 @@ public class SysRoleController {
         return resdata;
     }
     
-    @RequiresPermissions(value={"SysRole-Search-Interf"})
+    @RequiresPermissions(value={"SysRole-SearchByUserInfo-Interf"})
     @RequestMapping("/getListByUserInfo/{id}")
     @ResponseBody
     public Map<String, Object> getListByUserInfo(@PathVariable(value = "id") UserInfo obj, Model model) {
@@ -132,7 +132,7 @@ public class SysRoleController {
         return resdata;
     }
     
-    @RequiresPermissions(value={"SysRole-View-Btn"})
+    @RequiresPermissions(value={"SysRole-View"})
     @RequestMapping("/initView/{id}")
     public String initView(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
@@ -146,14 +146,14 @@ public class SysRoleController {
         return "sysrole/add";
     }
 
-    @RequiresPermissions(value={"SysRole-Update-Btn"})
+    @RequiresPermissions(value={"SysRole-UpdatePermission-Btn"})
     @RequestMapping("/initEditPermission/{id}")
     public String initEditPermission(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/editPermission";
     }
     
-    @RequiresPermissions(value={"SysRole-Update-Interf"})
+    @RequiresPermissions(value={"SysRole-SaveRoleList-Interf"})
     @RequestMapping(value = "/saveRoleList/{id}",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> saveRoleList(@PathVariable(value = "id") UserInfo obj,@RequestBody List<Long> rids, Model model) {

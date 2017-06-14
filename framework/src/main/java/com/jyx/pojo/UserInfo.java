@@ -21,18 +21,21 @@ public class UserInfo implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id; // 用户id;
-	@Column(unique = true, nullable = false)
-	private String username; // 账号.
+	@Column(unique = true, nullable = false, length = 32)
+	private String username; // 账号
+	@Column(length = 32)
 	private String name; // 名称（昵称或者真实姓名，不同系统不同定义）
-	@Column(nullable = false)
 	@NotNull
+	@Column(nullable = false)
 	@JsonIgnore // json转换忽略此字段
 	private String password; // 密码;
 	@Transient
 	@JsonIgnore
 	private final String salt = "jyx"; // 加密密码的盐
 	@Email
+	@Column(length = 32)
 	private String email; // 邮箱
+	@Column(length = 32)
 	private String telephone; // 手机号
 	@Lob
 	@Basic(fetch = FetchType.LAZY)

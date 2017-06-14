@@ -70,21 +70,21 @@
     <!-- 权限维护from -->
     <div class="col-md-8">
         <div class="box box-info">
-            <p class="login-box-msg">
-            <div id="successAlert" class="alert alert-success hide">
-                <strong>保存成功！</strong>
+            <div class="login-box-msg">
+	            <div id="successAlert" class="alert alert-success hide">
+	                <strong>保存成功！</strong>
+	            </div>
+	            <div id="warnAlert" class="alert alert-warning hide">
+	                <strong>操作失败！</strong>
+	            </div>
             </div>
-            <div id="warnAlert" class="alert alert-warning hide">
-                <strong>操作失败！</strong>
-            </div>
-            </p>
             <form id="defaultForm" action="#" method="post">
                 <input type="hidden" id="node_id" name="id" value="">
                 <input type="hidden" id="parent_id" name="parentId" value="1">
                 <input type="hidden" id="parent_ids" name="parentIds">
                 <div class="form-group">
                     <label>上级权限</label>
-                    <input type="text" id="parent_name" disabled="" class="form-control" placeholder="">
+                    <input type="text" id="parent_name" disabled class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                     <label>名称</label>
@@ -355,6 +355,10 @@
     $("#del_node").click(function () {
         var message = "确定要删除该权限及其子权限吗?";
         var id = $("#node_id").val();
+        if(id ==""){
+            $.dialog.alert("请先选择要删除的权限");
+            return;
+        }
         $.dialog.confirmDanger(message, function () {
             $.ajax({
                 type: "delete",

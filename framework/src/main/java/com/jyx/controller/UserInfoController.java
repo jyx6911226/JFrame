@@ -82,7 +82,7 @@ public class UserInfoController {
         return "account/add";
     }
 
-    @RequiresPermissions(value={"UserInfo-View-Btn"})
+    @RequiresPermissions(value={"UserInfo-View"})
     @RequestMapping("/initView/{id}")
     public String initView(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);

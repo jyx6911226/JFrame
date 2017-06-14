@@ -26,9 +26,10 @@ public class SysDictDetailController {
     @Resource
     private SysDictDetailService sysDictDetailService;
     
-    @RequestMapping("/initList")
-    public String initAccountList() {
-        return "account/list";
+    @RequestMapping("/initList/{id}")
+    public String initList(@PathVariable(value = "id") SysDict obj, Model model) {
+    	model.addAttribute("obj", obj);
+        return "dict/detail/list";
     }
     
     @RequestMapping("/getList")
@@ -55,9 +56,9 @@ public class SysDictDetailController {
             filters.add(valueFilter);
         }
         
-        if (searchObj.getValue() != null && !searchObj.getValue().trim().equals("")) {
-            SearchFilter valueFilter = new SearchFilter("value", SearchFilter.Operator.LIKE, searchObj.getValue(), SearchFilter.Connector.AND);
-            filters.add(valueFilter);
+        if (searchObj.getParentId() != null && !searchObj.getParentId().trim().equals("")) {
+            SearchFilter parentIdFilter = new SearchFilter("parentId", SearchFilter.Operator.EQ, searchObj.getParentId(), SearchFilter.Connector.AND);
+            filters.add(parentIdFilter);
         }
         try {
             Page<SysDictDetail> list = sysDictDetailService.findEntityPage(searchObj, pageable, filters);
@@ -73,28 +74,34 @@ public class SysDictDetailController {
         return resdata;
     }
 
-    @RequestMapping("/initAdd")
-    public String initAdd() {
-        return "dict/detail/add";
-    }
-
-    @RequestMapping("/initView/{id}")
-    public String initView(@PathVariable(value = "id") SysDict obj, Model model) {
-        model.addAttribute("obj", obj);
-        return "dict/detail/view";
-    }
-
-    @RequestMapping("/initEdit/{id}")
-    public String initEdit(@PathVariable(value = "id") SysDict obj, Model model) {
-        model.addAttribute("obj", obj);
-        return "dict/detail/add";
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping("/getListByDict/{id}")
     @ResponseBody
-    public Map<String, Object> add(SysDictDetail obj, Model model) {
+    public Map<String, Object> getListByDict(@PathVariable(value = "id") SysDict obj) {
+    	SysDictDetail searchObj = new SysDictDetail();
+    	searchObj.setSysDict(obj);
+    	List<SearchFilter> filters = new ArrayList<>();
+        SearchFilter sysDictFilter = new SearchFilter("sysDict.id", SearchFilter.Operator.EQ, searchObj.getSysDict().getId(), SearchFilter.Connector.AND);
+        filters.add(sysDictFilter);
+        
         Map<String, Object> resdata = new HashMap<>();
-        try {           
+        try {
+            Page<SysDictDetail> list = sysDictDetailService.findEntityPage(searchObj, null, filters);
+            resdata.put("list", list);
+            resdata.put("success", true);
+        } catch (Exception e) {
+            resdata.put("success", false);
+            resdata.put("error", "数据查询失败");
+            e.printStackTrace();
+        }
+        return resdata;
+    }
+
+    @RequestMapping( path = "/{dictId}",method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> add(@PathVariable(value = "dictId") SysDict sysDict, SysDictDetail obj, Model model) {
+        Map<String, Object> resdata = new HashMap<>();
+        try {
+            obj.setSysDict(sysDict);
         	sysDictDetailService.save(obj);
             resdata.put("success", true);
         } catch (Exception e) {
@@ -107,7 +114,7 @@ public class SysDictDetailController {
 
     @RequestMapping({"/validUnique"})
     @ResponseBody
-    public Map<String, Boolean> validUnique(SysDictDetail searchObj) {
+    public Map<String, Boolean> validUnique(SysDictDetail searchObj, String dictId) {
         boolean valid = false;
         Map<String, Boolean> map = new HashMap<String, Boolean>();
         List<SearchFilter> filters = new ArrayList<>();
@@ -123,8 +130,8 @@ public class SysDictDetailController {
             SearchFilter valueFilter = new SearchFilter("value", SearchFilter.Operator.EQ, searchObj.getValue(), SearchFilter.Connector.AND);
             filters.add(valueFilter);
         }
-        if (searchObj.getSysDict() != null && searchObj.getSysDict().getId() != null) {
-            SearchFilter valueFilter = new SearchFilter("sysDict.id", SearchFilter.Operator.EQ, searchObj.getSysDict().getId(), SearchFilter.Connector.AND);
+        if (dictId != null) {
+            SearchFilter valueFilter = new SearchFilter("sysDict.id", SearchFilter.Operator.EQ, dictId, SearchFilter.Connector.AND);
             filters.add(valueFilter);
         }
         if (searchObj.getParentId() != null) {
@@ -143,13 +150,19 @@ public class SysDictDetailController {
         map.put("valid", valid);
         return map;
     }
-     
-    @RequestMapping(method = RequestMethod.DELETE)
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Map<String, Object> delete(@RequestBody List<SysDictDetail> objs) {
+    public Map<String, Object> delete(@PathVariable(value = "id") SysDictDetail obj) {
         Map<String, Object> resdata = new HashMap<>();
+        List<SearchFilter> filters = new ArrayList<>();
         try {
-        	sysDictDetailService.delete(objs);
+            SearchFilter delFilter = new SearchFilter("parentIds", SearchFilter.Operator.LIKE, "," + obj.getId() + ",", SearchFilter.Connector.AND);
+            filters.add(delFilter);
+            Page<SysDictDetail> objs = sysDictDetailService.findEntityPage(obj, null, filters);
+            List<SysDictDetail> delList = new ArrayList<>(objs.getContent());
+            delList.add(obj);
+            sysDictDetailService.delete(delList);
             resdata.put("success", true);
         } catch (Exception e) {
             resdata.put("success", false);

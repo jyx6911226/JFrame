@@ -3,16 +3,10 @@ package com.jyx.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,31 +14,37 @@ import org.springframework.format.annotation.DateTimeFormat;
  * 系统字典明细（选项）
  * */
 @Entity
+@Table(uniqueConstraints = {
+		@UniqueConstraint(columnNames = {"sysDictId", "parentId", "label"}),
+		@UniqueConstraint(columnNames = {"sysDictId", "parentId", "value"})
+})
 public class SysDictDetail implements Serializable {
 	private static final long serialVersionUID = 6217079955415626957L;
 	
     @Id
+    @Column(length = 32)
     @GenericGenerator(name="sysDictDetailGenerator", strategy="uuid") //这个是hibernate的注解  
     @GeneratedValue(generator="sysDictDetailGenerator") //使用uuid的生成策略 
     private String id;// 主键
     
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false, length = 32)
     private String label;// 标注
     
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false, length = 32)
     private String value;// 选项值
     
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false, length = 32)
     private String parentId;     // 父编号
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String parentIds;    // 父编号列表
-    
+
+	@JsonIgnore
     @ManyToOne
-    @JoinColumn(name="SysDictId")
+    @JoinColumn(name="sysDictId")
     private SysDict sysDict;//所属的字典
     
     @Column(nullable = false)

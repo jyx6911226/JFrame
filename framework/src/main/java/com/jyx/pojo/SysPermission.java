@@ -17,14 +17,15 @@ public class SysPermission implements Serializable {
     @GeneratedValue
     private Long id;// 主键
     @NotNull
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 32)
     private String name;// 名称.
     @NotNull
-    @Column(nullable = false, columnDefinition = "enum('page','interface','button','node')")
+    @Column(nullable = false, length = 32, columnDefinition = "enum('page','interface','button','node')")
     private String resourceType;// 资源类型，[page|menu|button|node]
+    @Column
     private String resourceUrl;// 资源路径.
     @NotNull
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 32)
     private String permission;   // 权限字符串,menu例子：role:*，button例子：role:create,role:update,role:delete,role:view
     @NotNull
     @Column(nullable = false)

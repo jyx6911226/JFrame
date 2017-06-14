@@ -75,9 +75,9 @@ $(function (){
         ],
         "createdRow": function ( row, data, index ) {
             var $btnEdit = $('<button type="button" class="btn btn-small btn-primary btn-edit">修改</button>');
-            var $btnRole = $('<button type="button" id = "btn_detail" class="btn btn-small btn-info btn-edit">明细</button>');
+            var $btnDetail = $('<button type="button" id = "btn_detail" class="btn btn-small btn-info btn-edit">明细</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
-            $('td', row).eq(3).append($btnEdit).append($btnRole).append($btnDel);
+            $('td', row).eq(3).append($btnEdit).append($btnDetail).append($btnDel);
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调
@@ -154,7 +154,7 @@ $(function (){
         var item = _table.row($(this).closest('tr')).data();
         $(this).closest('tr').addClass("active").siblings().removeClass("active");
         dataManage.currentItem = item;
-        dataManage.roleItemInit(item);
+        dataManage.detailItemInit(item);
     }).on("click",".btn-del",function() {
 		//点击删除按钮
 		var item = _table.row($(this).closest('tr')).data();
@@ -242,9 +242,9 @@ var dataManage = {
 			window.location.href="./initEdit/"+item.id;
 		}
 	},
-    roleItemInit : function(item) {
+    detailItemInit : function(item) {
         if (item) {
-            window.location.href="./initEditRole/"+item.id;
+            window.location.href="../dictDetail/initList/"+item.id;
         }
     },
 	deleteItem : function(selectedItems) {

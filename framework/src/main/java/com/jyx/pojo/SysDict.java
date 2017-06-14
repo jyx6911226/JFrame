@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,18 +26,20 @@ public class SysDict implements Serializable {
 	private static final long serialVersionUID = 6217079955415626957L;
 	
     @Id
+    @Column(length = 32)
     @GenericGenerator(name="sysDictGenerator", strategy="uuid") //这个是hibernate的注解  
     @GeneratedValue(generator="sysDictGenerator") //使用uuid的生成策略 
     private String id;// 主键
     
     @NotNull
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 32)
     private String code;// 字典代码
     
     @NotNull
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 32)
     private String name;// 名称,文字描述
-    
+
+	@JsonIgnore
     @OneToMany(cascade = { CascadeType.ALL }, mappedBy="sysDict")
     private List<SysDictDetail> sysDictDetailList;//字典选项
     

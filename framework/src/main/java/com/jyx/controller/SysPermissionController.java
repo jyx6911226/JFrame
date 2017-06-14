@@ -5,6 +5,8 @@ import com.jyx.pojo.SysRole;
 import com.jyx.service.SysPermissionService;
 import com.jyx.service.SysRoleService;
 import com.jyx.util.jpa.SearchFilter;
+
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,12 +26,13 @@ public class SysPermissionController {
     @Resource
     private SysPermissionService sysPermissionService;
     
-    
+    @RequiresPermissions(value={"SysPermission-List"})
     @RequestMapping("/initList")
     public String initAccountList() {
         return "syspermission/list";
     }
 
+    @RequiresPermissions(value={"SysPermission-SearchAll-Interf"})
     @RequestMapping("/getAllList")
     @ResponseBody
     public Map<String, Object> getAllList() {
@@ -46,6 +49,7 @@ public class SysPermissionController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysPermission-GetPermissList-Interf"})
     @RequestMapping("/getPermissList/{id}")
     @ResponseBody
     public Map<String, Object> getPermissList(@PathVariable(value = "id") SysRole obj, Model model) {
@@ -63,6 +67,7 @@ public class SysPermissionController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysPermission-Add-Interf"})
     @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysPermission obj) {
@@ -79,6 +84,7 @@ public class SysPermissionController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysPermission-SavePermissionList-Interf"})
     @RequestMapping(value = "/savePermissionList/{id}",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> savePermissionList(@PathVariable(value = "id") SysRole obj,@RequestBody List<Long> pids, Model model) {
@@ -109,6 +115,7 @@ public class SysPermissionController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysPermission-Del-Interf"})
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@PathVariable(value = "id") SysPermission obj) {
@@ -130,6 +137,7 @@ public class SysPermissionController {
         return resdata;
     }
 
+    @RequiresPermissions(value={"SysPermission-List"})
     @RequestMapping({"/validUnique"})
     @ResponseBody
     public Map<String, Boolean> validUnique(SysPermission searchObj) {

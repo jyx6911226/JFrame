@@ -1,5 +1,6 @@
 package com.jyx;
 
+import com.jyx.pojo.SysDict;
 import com.jyx.pojo.UserInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
+import java.util.*;
+import java.util.stream.Collectors;
 
 //// SpringJUnit支持，由此引入Spring-Test框架支持！
 @RunWith(SpringRunner.class)
@@ -173,4 +176,15 @@ public class JPATest {
 //       message.setText("这是邮件内容");//邮件内容.
 //       mailSender.send(message);//发送邮件
 //    }
+//	public static void main(String[] args) {
+//		List names = new ArrayList();
+//
+//		names.add("Google");
+//		names.add("Runoob");
+//		names.add("Taobao");
+//		names.add("Baidu");
+//		names.add("Sina");
+//
+//		names.forEach(System.out::println);
+//	}
 }

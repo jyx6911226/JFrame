@@ -184,6 +184,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <!-- quart任务调度 -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.3</version>
+		</dependency>
         <!-- 发送邮件. -->
         <!-- http://412887952-qq-com.iteye.com/blog/2305992 -->
         <dependency>

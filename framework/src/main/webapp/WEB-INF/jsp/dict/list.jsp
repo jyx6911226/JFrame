@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,12 +89,16 @@
 													id="toggle-advanced-search">
 													<i class="fa fa-angle-double-down"></i>
 												</button>
-												<button type="button" class="btn btn-primary" id="btn-add">
-													<i class="fa fa-plus"></i> 添加
-												</button>
-												<button type="button" class="btn btn-danger" id="btn-del">
-													<i class="fa fa-remove"></i> 删除
-												</button>
+												<shiro:hasPermission name="SysDict-Add-Btn">
+													<button type="button" class="btn btn-primary" id="btn-add">
+														<i class="fa fa-plus"></i> 添加
+													</button>
+												</shiro:hasPermission>
+												<shiro:hasPermission name="SysDict-Del-Btn">
+													<button type="button" class="btn btn-danger" id="btn-del">
+														<i class="fa fa-remove"></i> 删除
+													</button>
+												</shiro:hasPermission>
 											</div>
 										</div>
 									</div>

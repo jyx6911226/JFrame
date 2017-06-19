@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!-- 语言版本 : ${pageContext.response.locale} -->
 <!DOCTYPE html>
 <html>
@@ -224,7 +224,7 @@
 					</div>
 				</div>
 
-				<!-- search form (Optional)
+			<!-- search form (Optional)
             <form action="#" method="get" class="sidebar-form">
               <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -240,43 +240,66 @@
 				<ul class="sidebar-menu">
 					<!--<li class="header">HEADER</li> -->
 					<!-- Optionally, you can add icons to the links -->
-					<li class="treeview"><a href="#"><i class="fa fa-link"></i>
-							<span>资源管理</span> <span class="pull-right-container"> <i
-								class="fa fa-angle-left pull-right"></i>
-						</span> </a>
-						<ul class="treeview-menu">
-							<li><a
-								href="${pageContext.request.contextPath}/userInfo/initList"
-								target="content_iframe">用户管理</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/sysRole/initList"
-								target="content_iframe">角色管理</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/sysPermission/initList"
-								target="content_iframe">权限管理</a></li>
-						</ul></li>
-					<li class="treeview"><a href="#"><i class="fa fa-link"></i><span>系统字典</span>
-							<span class="pull-right-container"> <i
-								class="fa fa-angle-left pull-right"></i>
-						</span> </a>
-						<ul class="treeview-menu">
-							<li><a href="${pageContext.request.contextPath}/dict/initList"
-								target="content_iframe">字典管理</a></li>
-						</ul></li>
-					<li class="treeview"><a href="#"><i class="fa fa-link"></i><span>系统监控</span>
-							<span class="pull-right-container"> <i
-								class="fa fa-angle-left pull-right"></i>
-						</span> </a>
-						<ul class="treeview-menu">
-							<li><a href="${pageContext.request.contextPath}/druid"
-								target="content_iframe">数据库监控</a></li>
-							<li><a href="#" target="content_iframe">应用监控</a></li>
-							<li><a href="#" target="content_iframe">运行日志</a></li>
-						</ul></li>
-					<li><a
-						href="${pageContext.request.contextPath}/swagger-ui.html"
-						target="content_iframe"> <i class="fa fa-th"></i> <span>接口测试</span>
-					</a></li>
+					<shiro:hasPermission name="resource">
+						<li class="treeview"><a href="#"><i class="fa fa-link"></i>
+								<span>资源管理</span> <span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+							</span></a>
+							<ul class="treeview-menu">
+								<shiro:hasPermission name="UserInfo-List">
+									<li><a
+										href="${pageContext.request.contextPath}/userInfo/initList"
+										target="content_iframe">用户管理</a></li>
+								</shiro:hasPermission>
+								<shiro:hasPermission name="SysRole-List">
+									<li><a
+										href="${pageContext.request.contextPath}/sysRole/initList"
+										target="content_iframe">角色管理</a></li>
+								</shiro:hasPermission>
+								<shiro:hasPermission name="SysPermission-List">
+									<li><a
+										href="${pageContext.request.contextPath}/sysPermission/initList"
+										target="content_iframe">权限管理</a></li>
+								</shiro:hasPermission>
+							</ul></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="dictionary">
+						<li class="treeview"><a href="#"><i class="fa fa-link"></i><span>系统字典</span>
+								<span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+							</span> </a>
+							<ul class="treeview-menu">
+								<shiro:hasPermission name="SysDict">
+									<li><a
+										href="${pageContext.request.contextPath}/dict/initList"
+										target="content_iframe">字典管理</a></li>
+								</shiro:hasPermission>
+							</ul></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="monitor">
+						<li class="treeview"><a href="#"><i class="fa fa-link"></i><span>系统监控</span>
+								<span class="pull-right-container"> <i
+									class="fa fa-angle-left pull-right"></i>
+							</span> </a>
+							<ul class="treeview-menu">
+								<shiro:hasPermission name="monitor-db">
+									<li><a href="${pageContext.request.contextPath}/druid"
+										target="content_iframe">数据库监控</a></li>
+								</shiro:hasPermission>
+								<shiro:hasPermission name="monitor-app">
+									<li><a href="#" target="content_iframe">应用监控</a></li>
+								</shiro:hasPermission>
+								<shiro:hasPermission name="monitor-log">
+									<li><a href="#" target="content_iframe">运行日志</a></li>
+								</shiro:hasPermission>
+							</ul></li>
+					</shiro:hasPermission>
+					<shiro:hasPermission name="interface_test">
+						<li><a
+							href="${pageContext.request.contextPath}/swagger-ui.html"
+							target="content_iframe"> <i class="fa fa-th"></i> <span>接口测试</span>
+						</a></li>
+					</shiro:hasPermission>
 				</ul>
 				<!-- /.sidebar-menu -->
 			</section>

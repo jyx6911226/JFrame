@@ -191,22 +191,13 @@ var dataManage = {
 		if (data.order&&data.order.length&&data.order[0]) {
 			switch (data.order[0].column) {
 			case 1:
-				param.orderColumn = "id";
-				break;
-			case 2:
-				param.orderColumn = "username";
-				break;
-			case 3:
 				param.orderColumn = "name";
 				break;
-			case 4:
-				param.orderColumn = "email";
-				break;
-			case 5:
-				param.orderColumn = "telephone";
+			case 2:
+				param.orderColumn = "code";
 				break;
 			default:
-				param.orderColumn = "state";
+				param.orderColumn = "code";
 				break;
 			}
 			param.orderDir = data.order[0].dir;

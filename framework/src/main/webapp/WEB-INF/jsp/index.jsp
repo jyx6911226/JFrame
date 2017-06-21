@@ -276,6 +276,16 @@
 								</shiro:hasPermission>
 							</ul></li>
 					</shiro:hasPermission>
+					<li class="treeview"><a href="#"><i class="fa fa-link"></i><span>系统任务</span>
+						<span class="pull-right-container"> <i
+								class="fa fa-angle-left pull-right"></i>
+							</span> </a>
+						<ul class="treeview-menu">
+								<li><a
+										href="${pageContext.request.contextPath}/scheduler/initList"
+										target="content_iframe">任务管理</a></li>
+						</ul>
+					</li>
 					<shiro:hasPermission name="monitor">
 						<li class="treeview"><a href="#"><i class="fa fa-link"></i><span>系统监控</span>
 								<span class="pull-right-container"> <i

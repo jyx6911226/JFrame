@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * FactoryBean
- *
- * @author zhangqing
- * @date 2017年04月13日
  */
 @Component
 public class JobFactory extends AdaptableJobFactory {

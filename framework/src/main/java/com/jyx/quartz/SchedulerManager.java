@@ -1,10 +1,9 @@
 package com.jyx.quartz;
 
 
+import com.jyx.pojo.SysScheduler;
 import org.quartz.Job;
 import org.springframework.stereotype.Component;
-
-import com.jyx.pojo.SysJob;
 
 import javax.annotation.Resource;
 
@@ -16,10 +15,10 @@ public class SchedulerManager {
 	/**
 	 * 添加
 	 *
-	 * @param job
+	 * @param sysScheduler
 	 */
-	public void addScheduler(SysJob job) {
-		addOrModify(job);
+	public void addScheduler(SysScheduler sysScheduler) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+		addOrModify(sysScheduler);
 	}
 	public  void start(){
 		schedulerUtil.startJobs();
@@ -27,60 +26,60 @@ public class SchedulerManager {
 	/**
 	 * 添加或修改
 	 *
-	 * @param job
+	 * @param sysScheduler
 	 */
-	private void addOrModify(SysJob job) {
+	private void addOrModify(SysScheduler sysScheduler) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		// job类处理
-		Class<? extends Job> jobclass = verify(job);
+		Class<? extends Job> jobclass = verify(sysScheduler);
 		// 添加到调度器
 		if (null != jobclass) {
-			if (schedulerUtil.isExist(getJobName(job))) {// 存在
-				schedulerUtil.modifyJobTime(getJobName(job), job.getCron(),
-						schedulerUtil.getJobDataMap(job.getJobParams()));
+			if (schedulerUtil.isExist(getJobName(sysScheduler))) {// 存在
+				schedulerUtil.modifyJobTime(getJobName(sysScheduler), sysScheduler.getCron(),
+						schedulerUtil.getJobDataMap(sysScheduler.getJobParams()));
 			} else {// 不存在
-				schedulerUtil.addJob(getJobName(job), jobclass, job.getCron(),
-						schedulerUtil.getJobDataMap(job.getJobParams()));
+				schedulerUtil.addJob(getJobName(sysScheduler), jobclass, sysScheduler.getCron(),
+						schedulerUtil.getJobDataMap(sysScheduler.getJobParams()));
 			}
-			pauseJob(job);
+			pauseJob(sysScheduler);
 		}
 	}
 
 	/**
 	 * 如果isStart=false暂停一个任务，否则开启一个任务
 	 *
-	 * @param job
+	 * @param sysScheduler
 	 */
-	public void pauseJob(SysJob job) {
-		String jobName = getJobName(job);
-		if (job.getStartFlag().equalsIgnoreCase("1")) {// 开启一个任务
+	public void pauseJob(SysScheduler sysScheduler) {
+		String jobName = getJobName(sysScheduler);
+		if (sysScheduler.getStartFlag()) {// 开启一个任务
 			schedulerUtil.resumeJob(jobName);
-		} else if (job.getStartFlag().equalsIgnoreCase("0")) {// 暂停一个任务
+		} else if (!sysScheduler.getStartFlag()) {// 暂停一个任务
 			schedulerUtil.pauseJob(jobName);
 		}
 	}
 
-	private static String getJobName(SysJob job) {
-		return job.getId();
+	private static String getJobName(SysScheduler sysScheduler) {
+		return sysScheduler.getId();
 	}
 
 	/**
 	 * 校验
 	 *
-	 * @param job
+	 * @param sysScheduler
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public Class<? extends Job> verify(SysJob job) {
+	public Class<? extends Job> verify(SysScheduler sysScheduler) throws ClassNotFoundException,InstantiationException,IllegalAccessException{
 		try {
 			// cron 表达式验证
-			schedulerUtil.cronVerify(job.getCron());
+			schedulerUtil.cronVerify(sysScheduler.getCron());
 			// jobclass验证
-			Class<?> clazz = Class.forName(job.getJobClass());
+			Class<?> clazz = Class.forName(sysScheduler.getJobClass());
 			Object instance = clazz.newInstance();
-			if (instance instanceof ParamsVerify && job.getId() == null) {
+			if (instance instanceof ParamsVerify && sysScheduler.getId() == null) {
 				ParamsVerify paramsVerify = (ParamsVerify) instance;
 
-				paramsVerify.verify(schedulerUtil.getJobDataMap(job.getJobParams()));// 校验
+				paramsVerify.verify(schedulerUtil.getJobDataMap(sysScheduler.getJobParams()));// 校验
 			}
 			if (instance instanceof Job) {
 				return (Class<? extends Job>) clazz;
@@ -95,18 +94,18 @@ public class SchedulerManager {
 	/**
 	 * 删除
 	 *
-	 * @param job
+	 * @param sysScheduler
 	 */
-	public void deleteScheduler(SysJob job) {
-		schedulerUtil.removeJob(getJobName(job));
+	public void deleteScheduler(SysScheduler sysScheduler) {
+		schedulerUtil.removeJob(getJobName(sysScheduler));
 	}
 
 	/**
 	 * 修改调度器cron
 	 *
-	 * @param job
+	 * @param sysScheduler
 	 */
-	public void updateScheduler(SysJob job) {
-		addOrModify(job);
+	public void updateScheduler(SysScheduler sysScheduler) throws IllegalAccessException, ClassNotFoundException, InstantiationException {
+		addOrModify(sysScheduler);
 	}
 }

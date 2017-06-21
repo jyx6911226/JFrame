@@ -13,7 +13,6 @@ import javax.annotation.Resource;
  * 测试类
  *
  */
-@Component
 public class SchedulerTest implements Job {
     @Resource
     private UserInfoService userService;

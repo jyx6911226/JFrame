@@ -1,26 +1,46 @@
 package com.jyx;
 
-import com.jyx.pojo.SysDict;
-import com.jyx.pojo.UserInfo;
+import com.jyx.pojo.SysScheduler;
+import com.jyx.quartz.SchedulerManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.context.junit4.SpringRunner;
 import javax.annotation.Resource;
 import java.util.*;
-import java.util.stream.Collectors;
 
 //// SpringJUnit支持，由此引入Spring-Test框架支持！
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class JPATest {
-	@Resource
-    private JavaMailSender mailSender;
+//	@Resource
+//    private JavaMailSender mailSender;
+    @Resource
+    SchedulerManager schedulerManager;
 	@Test
 	public void test(){
+		SysScheduler job = new SysScheduler();
+		job.setId(UUID.randomUUID().toString());
+		job.setName("testJob");
+		job.setJobClass("com.jyx.quartz.jobs.SchedulerTest1");
+		job.setCron("*/5 * * * * ?");
+		job.setStartFlag(true);
+		job.setJobParams("[]");
 
-	}
+		try {
+			schedulerManager.addScheduler(job);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		}
+		System.out.println("==================================>add");
+        schedulerManager.pauseJob(job);
+        System.out.println("==================================>start");
+
+    }
 //	@Test
 //	public void testOneToOne_save(){
 //		//Assert.assertEquals("hello",testService.getName());

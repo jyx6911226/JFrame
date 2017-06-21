@@ -10,9 +10,6 @@ import java.io.IOException;
 
 /**
  * 定时器配置
- *
- * @author zhangqing
- * @date 2017年04月13日
  */
 @Configuration
 @EnableScheduling

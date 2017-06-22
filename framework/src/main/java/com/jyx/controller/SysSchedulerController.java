@@ -102,7 +102,7 @@ public class SysSchedulerController {
     public Map<String, Object> add(SysScheduler obj, Model model) {
         Map<String, Object> resdata = new HashMap<>();
         try {
-        	sysSchedulerService.saveSysSchedulerAndDeploy(obj);
+        	sysSchedulerService.saveAndDeploySysScheduler(obj);
             resdata.put("success", true);
         } catch (Exception e) {
             resdata.put("success", false);
@@ -118,7 +118,7 @@ public class SysSchedulerController {
     public Map<String, Object> delete(@RequestBody List<SysScheduler> objs) {
         Map<String, Object> resdata = new HashMap<>();
         try {
-            sysSchedulerService.delete(objs);
+            sysSchedulerService.deleteSysSchedulerAndRemove(objs);
             resdata.put("success", true);
         } catch (Exception e) {
             resdata.put("success", false);

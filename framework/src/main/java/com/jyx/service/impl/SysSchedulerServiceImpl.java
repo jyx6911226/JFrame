@@ -63,13 +63,34 @@ public class SysSchedulerServiceImpl implements BaseService<SysScheduler>,SysSch
 
 	@Transactional
 	@Override
-	public void saveSysSchedulerAndDeploy(SysScheduler sysScheduler) throws Exception {
+	public void saveAndDeploySysScheduler(SysScheduler sysScheduler) throws Exception {
 
         //step1:保存任务
-        UUID uuid = UUID.randomUUID();
-        sysScheduler.setId(uuid.toString());
+        if(sysScheduler.getId() == null) {
+            UUID uuid = UUID.randomUUID();
+            sysScheduler.setId(uuid.toString());
+        }
 		this.save(sysScheduler);
 		//step2：部署任务
 		this.deploySysScheduler(sysScheduler);
+	}
+
+	@Override
+	public void removeSysScheduler(List<SysScheduler> sysSchedulerList) throws Exception {
+		if(sysSchedulerList != null) {
+		    for(SysScheduler sysScheduler : sysSchedulerList){
+                schedulerManager.deleteScheduler(sysScheduler);
+            }
+        }
+	}
+
+	@Transactional
+	@Override
+	public void deleteSysSchedulerAndRemove(List<SysScheduler> sysSchedulerList) throws Exception {
+
+		//step1：移除任务
+		this.removeSysScheduler(sysSchedulerList);
+		//step2:删除任务
+		this.delete(sysSchedulerList);
 	}
 }

@@ -103,7 +103,7 @@
 						</div>
 						<div class="form-group">
 							<label>运行参数</label>
-							<textarea class="form-control" rows="3" id="sysscheduler_jobParams" name="jobParam" value="${obj.jobParam}" placeholder="运行参数"></textarea>
+							<textarea class="form-control" rows="3" id="sysscheduler_jobParams" name="jobParams" placeholder="运行参数">${obj.jobParams}</textarea>
 							<span class="form-control-feedback"></span>
 						</div>
 						<div class="form-group">

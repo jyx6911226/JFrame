@@ -7,8 +7,6 @@ import org.quartz.JobExecutionException;
 /**
  * 测试类
  *
- * @author zhangqing
- * @date 2017年02月23日
  */
 public class SchedulerTest2 implements Job {
     @Override

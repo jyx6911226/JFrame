@@ -1,6 +1,11 @@
 package com.jyx.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import com.jyx.pojo.SysScheduler;
+import com.jyx.quartz.SchedulerUtil;
 import com.jyx.service.SysSchedulerService;
 import com.jyx.service.SysSchedulerService;
 import com.jyx.util.jpa.SearchFilter;
@@ -25,7 +30,8 @@ import java.util.Map;
 public class SysSchedulerController {
     @Resource
     private SysSchedulerService sysSchedulerService;
-    
+    @Resource
+    private SchedulerUtil schedulerUtil;
     @RequiresPermissions(value={"SysScheduler-List"})
     @RequestMapping("/initList")
     public String initList() {
@@ -156,6 +162,22 @@ public class SysSchedulerController {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        map.put("valid", valid);
+        return map;
+    }
+
+    @RequiresPermissions(value={"SysScheduler-List"})
+    @RequestMapping({"/validJobParams"})
+    @ResponseBody
+    public Map<String, Boolean> validJobParams(String jobParams) {
+        boolean valid = false;
+        Map<String, Boolean> map = new HashMap<String, Boolean>();
+        try {
+            schedulerUtil.getJobDataMap(jobParams);
+            valid = true;
+        }catch (JSONException e) {
+            valid = false;
         }
         map.put("valid", valid);
         return map;

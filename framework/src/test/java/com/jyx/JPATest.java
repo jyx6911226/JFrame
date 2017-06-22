@@ -1,5 +1,8 @@
 package com.jyx;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.jyx.pojo.SysScheduler;
 import com.jyx.quartz.SchedulerManager;
 import org.junit.Test;
@@ -19,27 +22,8 @@ public class JPATest {
     SchedulerManager schedulerManager;
 	@Test
 	public void test(){
-		SysScheduler job = new SysScheduler();
-		job.setId(UUID.randomUUID().toString());
-		job.setName("testJob");
-		job.setJobClass("com.jyx.quartz.jobs.SchedulerTest1");
-		job.setCron("*/5 * * * * ?");
-		job.setStartFlag(true);
-		job.setJobParams("[]");
-
-		try {
-			schedulerManager.addScheduler(job);
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		}
-		System.out.println("==================================>add");
-        schedulerManager.pauseJob(job);
-        System.out.println("==================================>start");
-
+//	    String jobParams = "[]";
+//        List<Map> list = JSON.parseArray(jobParams, Map.class);
     }
 //	@Test
 //	public void testOneToOne_save(){

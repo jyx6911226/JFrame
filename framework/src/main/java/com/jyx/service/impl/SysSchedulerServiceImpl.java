@@ -64,9 +64,8 @@ public class SysSchedulerServiceImpl implements BaseService<SysScheduler>,SysSch
 	@Transactional
 	@Override
 	public void saveAndDeploySysScheduler(SysScheduler sysScheduler) throws Exception {
-
         //step1:保存任务
-        if(sysScheduler.getId() == null) {
+        if(sysScheduler.getId() == null || "".equals(sysScheduler.getId().trim())) {
             UUID uuid = UUID.randomUUID();
             sysScheduler.setId(uuid.toString());
         }
@@ -93,4 +92,9 @@ public class SysSchedulerServiceImpl implements BaseService<SysScheduler>,SysSch
 		//step2:删除任务
 		this.delete(sysSchedulerList);
 	}
+
+    @Override
+    public List<SysScheduler> findByStartFlag(Boolean startFlag) throws Exception {
+        return sysSchedulerDao.findByStartFlag(startFlag);
+    }
 }

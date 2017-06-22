@@ -27,4 +27,9 @@ public interface SysSchedulerService extends BaseService<SysScheduler>{
      * 删除并移除任务
      * */
     void deleteSysSchedulerAndRemove(List<SysScheduler> sysSchedulerList) throws Exception;
+
+    /**
+     * 通过状态查找任务信息;
+     */
+    List<SysScheduler> findByStartFlag(Boolean startFlag) throws Exception;
 }

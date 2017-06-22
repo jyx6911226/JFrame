@@ -227,6 +227,21 @@
 																delay : 2000
 															}
 														}
+													},
+                                                    jobParams : {
+                                                        message : '请输入任务参数',
+                                                        validators : {
+                                                            remote : {
+                                                                message : '任务参数必须为JSON数组格式',
+                                                                url : '${pageContext.request.contextPath}/scheduler/validJobParams',
+                                                                data : {
+                                                                    jobParams : function() {
+                                                                        return $("#sysscheduler_jobParams").val();
+                                                                    }
+                                                                },
+                                                                delay : 2000
+                                                            }
+                                                        }
 													}
 												},
 												submitHandler : function(

@@ -69,8 +69,7 @@
 					<form id="defaultForm" action="#" method="post">
 						<input type="hidden" id="sysdict_id" name="id" value="${obj.id}">
 						<input type="hidden" name="createdTime" value="${obj.createdTime}">
-						<input type="hidden" name="lastUpdateTime"
-							value="${obj.lastUpdateTime}">
+						<input type="hidden" name="lastUpdateTime" value="${obj.lastUpdateTime}">
 						<div class="form-group">
 							<label>名称</label> <input type="text" id="sysdict_name"
 								name="name" value="${obj.name}" class="form-control"

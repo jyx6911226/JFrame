@@ -9,5 +9,5 @@ public interface UserInfoDao extends JpaRepository<UserInfo, Long>, JpaSpecifica
 	/**
      * 通过username查找用户信息;
      */
-    public UserInfo findByUsername(String username);
+    UserInfo findByUsername(String username);
 }	

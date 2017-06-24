@@ -240,17 +240,23 @@ var dataManage = {
     },
 	deleteItem : function(selectedItems) {
 		var message;
+		var ids = new Array();
 		if (selectedItems&&selectedItems.length) {
 			if (selectedItems.length == 1) {
 				message = "确定要删除吗?";
+
 			}else{
 				message = "确定要删除选中的"+selectedItems.length+"项记录吗?";
+
 			}
+            for (var i = 0; i < selectedItems.length; i++) {
+                ids.push(selectedItems[i].id);
+            }
 			$.dialog.confirmDanger(message, function(){
                 $.ajax({
                     type: "delete",
                     url: "./",
-                    data: JSON.stringify(selectedItems),	//传入已封装的参数
+                    data: JSON.stringify(ids),
                     contentType:"application/json",
                     dataType: "json",
                     //json中数据节点的name

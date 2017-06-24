@@ -116,10 +116,11 @@ public class SysDictController {
     @RequiresPermissions(value={"SysDict-Del-Interf"})
     @RequestMapping(method = RequestMethod.DELETE)
     @ResponseBody
-    public Map<String, Object> delete(@RequestBody List<SysDict> objs) {
+    public Map<String, Object> delete(@RequestBody List<String> ids) {
         Map<String, Object> resdata = new HashMap<>();
         try {
-            sysDictService.delete(objs);
+            List<SysDict> list = sysDictService.findById(ids);
+            sysDictService.delete(list);
             resdata.put("success", true);
         } catch (Exception e) {
             resdata.put("success", false);

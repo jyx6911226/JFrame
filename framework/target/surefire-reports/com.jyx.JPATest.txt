@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.jyx.JPATest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.001 sec - in com.jyx.JPATest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.317 sec - in com.jyx.JPATest

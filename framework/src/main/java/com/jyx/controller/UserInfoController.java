@@ -6,6 +6,8 @@ import com.jyx.util.jpa.SearchFilter;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.crypto.hash.Md5Hash;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -26,7 +28,9 @@ import java.util.Map;
 public class UserInfoController {
     @Resource
     private UserInfoService userInfoService;
-    
+
+    private Logger log = LoggerFactory.getLogger(UserInfoController.class);
+
     @RequiresPermissions(value={"UserInfo-List"})
     @RequestMapping("/initList")
     public String initAccountList() {
@@ -119,9 +123,11 @@ public class UserInfoController {
             }
             userInfoService.save(obj);
             resdata.put("success", true);
+            log.info("管理员添加用户成功",obj);
         } catch (Exception e) {
             resdata.put("success", false);
             resdata.put("error", "数据保存失败");
+            log.error("管理员添加用户失败",obj);
             e.printStackTrace();
         }
         return resdata;

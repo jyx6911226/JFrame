@@ -1,12 +1,14 @@
 package com.jyx.service.impl;
 
 import com.jyx.dao.SysDictDetailDao;
+import com.jyx.pojo.SysDict;
 import com.jyx.pojo.SysDictDetail;
 import com.jyx.service.BaseService;
 import com.jyx.service.SysDictDetailService;
 import com.jyx.util.jpa.DynamicSpecifications;
 import com.jyx.util.jpa.SearchFilter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

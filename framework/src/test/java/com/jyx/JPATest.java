@@ -3,6 +3,9 @@ package com.jyx;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.jyx.dao.SysDictDao;
+import com.jyx.dao.SysDictDetailDao;
+import com.jyx.pojo.SysDict;
 import com.jyx.pojo.SysScheduler;
 import com.jyx.quartz.SchedulerManager;
 import org.junit.Test;
@@ -18,12 +21,14 @@ import java.util.*;
 public class JPATest {
 //	@Resource
 //    private JavaMailSender mailSender;
-    @Resource
-    SchedulerManager schedulerManager;
+//    @Resource
+//    SchedulerManager schedulerManager;
+	@Resource
+	SysDictDetailDao sysDictDetailDao;
+	@Resource
+	SysDictDao sysDictDao;
 	@Test
 	public void test(){
-//	    String jobParams = "[]";
-//        List<Map> list = JSON.parseArray(jobParams, Map.class);
     }
 //	@Test
 //	public void testOneToOne_save(){

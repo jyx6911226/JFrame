@@ -13,5 +13,5 @@ public interface SysSchedulerDao extends JpaRepository<SysScheduler, String>, Jp
     /**
      * 通过状态查找任务信息;
      */
-    public List<SysScheduler> findByStartFlag(Boolean startFlag);
+    List<SysScheduler> findByStartFlag(Boolean startFlag);
 }

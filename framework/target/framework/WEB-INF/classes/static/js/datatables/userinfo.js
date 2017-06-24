@@ -46,7 +46,7 @@ $(function (){
             CONSTANT.DATA_TABLES.COLUMN.CHECKBOX,
             {
             	//className : "ellipsis",	//文字过长时用省略号显示，CSS实现
-            	data: "uid"
+            	data: "id"
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,//会显示省略号的列，需要用title属性实现划过时显示全部文本的效果
             },
             {
@@ -85,19 +85,11 @@ $(function (){
 			}
         ],
         "createdRow": function ( row, data, index ) {
-        	//行渲染回调,在这里可以对该行dom元素进行任何操作
-        	//给当前行加样式
-        	//if (data.role) {
-        	//	$(row).addClass("info");
-			//}
-        	//给当前行某列加样式
-        	//$('td', row).eq(3).addClass(data.status?"text-success":"text-error");
-        	//不使用render，改用jquery文档操作呈现单元格
             var $btnEdit = $('<button type="button" class="btn btn-small btn-primary btn-edit">修改</button>');
+            var $btnRole = $('<button type="button" id = "btn_role" class="btn btn-small btn-info btn-edit">角色挂接</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
             //var $btnView = $('<button type="button" class="btn btn-small btn-danger btn-del">查看</button>');
-            $('td', row).eq(7).append($btnEdit).append($btnDel);
-            
+            $('td', row).eq(7).append($btnEdit).append($btnRole).append($btnDel);
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调
@@ -143,7 +135,7 @@ $(function (){
 	});
 	
 	//行点击事件
-	$("tbody",$table).on("click","tr",function(event) {
+	$("tbody",$table).on("dblclick","tr",function(event) {
 		$(this).addClass("active").siblings().removeClass("active");
 		//获取该行对应的数据
 		var item = _table.row($(this).closest('tr')).data();
@@ -169,7 +161,13 @@ $(function (){
 		$(this).closest('tr').addClass("active").siblings().removeClass("active");
 		userManage.currentItem = item;
 		userManage.editItemInit(item);
-	}).on("click",".btn-del",function() {
+	}).on("click","#btn_role",function() {
+        //点击权限挂接按钮
+        var item = _table.row($(this).closest('tr')).data();
+        $(this).closest('tr').addClass("active").siblings().removeClass("active");
+        userManage.currentItem = item;
+        userManage.roleItemInit(item);
+    }).on("click",".btn-del",function() {
 		//点击删除按钮
 		var item = _table.row($(this).closest('tr')).data();
 		$(this).closest('tr').addClass("active").siblings().removeClass("active");
@@ -205,7 +203,7 @@ var userManage = {
 		if (data.order&&data.order.length&&data.order[0]) {
 			switch (data.order[0].column) {
 			case 1:
-				param.orderColumn = "uid";
+				param.orderColumn = "id";
 				break;
 			case 2:
 				param.orderColumn = "username";
@@ -244,7 +242,7 @@ var userManage = {
 	},
 	showItemDetail : function(item) {
 		if(item){
-			window.location.href="./initView/"+item.uid;
+			window.location.href="./initView/"+item.id;
 		}
 	},
 	addItemInit : function() {
@@ -254,27 +252,15 @@ var userManage = {
         window.location.href="./initAdd";
 	},
 	editItemInit : function(item) {
-		if (!item) {
-			return;
+		if (item) {
+			window.location.href="./initEdit/"+item.id;
 		}
-//		$("#form-edit")[0].reset();
-//		$("#title-edit").text(item.name);
-//		$("#name-edit").val(item.name);
-//		$("#position-edit").val(item.position);
-//		$("#salary-edit").val(item.salary);
-//		$("#start-date-edit").val(item.start_date);
-//		$("#office-edit").val(item.office);
-//		$("#extn-edit").val(item.extn);
-//		$("#role-edit").val(item.role);
-		
-//		$("#user-edit").show().siblings(".info-block").hide();
 	},
-//	addItemSubmit : function() {
-//		$.dialog.tips('保存当前添加用户');
-//	},
-//	editItemSubmit : function() {
-//		$.dialog.tips('保存当前编辑用户');
-//	},
+    roleItemInit : function(item) {
+        if (item) {
+            window.location.href="./initEditRole/"+item.id;
+        }
+    },
 	deleteItem : function(selectedItems) {
 		var message;
 		if (selectedItems&&selectedItems.length) {

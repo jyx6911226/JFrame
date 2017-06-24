@@ -50,7 +50,7 @@ $(function (){
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,//会显示省略号的列，需要用title属性实现划过时显示全部文本的效果
             },
             {
-            	//className : "ellipsis",	
+            	className : "ellipsis",	
             	data: "role"
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,
             	//固定列宽，但至少留下一个活动列不要固定宽度，让表格自行调整。不要将所有列都指定列宽，否则页面伸缩时所有列都会随之按比例伸缩。
@@ -58,7 +58,7 @@ $(function (){
 				//width : "20px"			
             },
             {
-            	//className : "ellipsis",	
+            	className : "ellipsis",	
             	data: "name"
             	//render : CONSTANT.DATA_TABLES.RENDER.ELLIPSIS,
             	//固定列宽，但至少留下一个活动列不要固定宽度，让表格自行调整。不要将所有列都指定列宽，否则页面伸缩时所有列都会随之按比例伸缩。
@@ -77,19 +77,11 @@ $(function (){
 			}
         ],
         "createdRow": function ( row, data, index ) {
-        	//行渲染回调,在这里可以对该行dom元素进行任何操作
-        	//给当前行加样式
-        	//if (data.role) {
-        	//	$(row).addClass("info");
-			//}
-        	//给当前行某列加样式
-        	//$('td', row).eq(3).addClass(data.status?"text-success":"text-error");
-        	//不使用render，改用jquery文档操作呈现单元格
-            var $btnEdit = $('<button type="button" class="btn btn-small btn-primary btn-edit">修改</button>');
+            var $btnEdit = $('<button type="button" id = "btn_edit" class="btn btn-small btn-primary btn-edit">修改</button>');
+            var $btnPersission = $('<button type="button" id = "btn_persission" class="btn btn-small btn-info btn-edit">权限挂接</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
             //var $btnView = $('<button type="button" class="btn btn-small btn-danger btn-del">查看</button>');
-            $('td', row).eq(7).append($btnEdit).append($btnDel);
-            
+            $('td', row).eq(5).append($btnEdit).append($btnPersission).append($btnDel);
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调
@@ -112,7 +104,7 @@ $(function (){
         });
 		userManage.deleteItem(arrItemId);
 	});
-	
+
 	$("#btn-simple-search").click(function(){
 		userManage.fuzzySearch = true;		
 		//reload效果与draw(true)或者draw()类似,draw(false)则可在获取新数据的同时停留在当前页码,可自行试验
@@ -126,16 +118,8 @@ $(function (){
 		_table.draw();
 	});
 	
-	$("#btn-save-add").click(function(){
-		userManage.addItemSubmit();
-	});
-	
-	$("#btn-save-edit").click(function(){
-		userManage.editItemSubmit();
-	});
-	
 	//行点击事件
-	$("tbody",$table).on("click","tr",function(event) {
+	$("tbody",$table).on("dblclick","tr",function(event) {
 		$(this).addClass("active").siblings().removeClass("active");
 		//获取该行对应的数据
 		var item = _table.row($(this).closest('tr')).data();
@@ -155,7 +139,7 @@ $(function (){
     }).on("click",".td-checkbox",function(event) {
     	//点击单元格即点击复选框
     	!$(event.target).is(":checkbox") && $(":checkbox",this).trigger("click");
-    }).on("click",".btn-edit",function() {
+    }).on("click","#btn_edit",function() {
     	//点击编辑按钮
         var item = _table.row($(this).closest('tr')).data();
 		$(this).closest('tr').addClass("active").siblings().removeClass("active");
@@ -166,7 +150,13 @@ $(function (){
 		var item = _table.row($(this).closest('tr')).data();
 		$(this).closest('tr').addClass("active").siblings().removeClass("active");
 		userManage.deleteItem([item]);
-	});
+	}).on("click","#btn_persission",function() {
+        //点击权限挂接按钮
+        var item = _table.row($(this).closest('tr')).data();
+        $(this).closest('tr').addClass("active").siblings().removeClass("active");
+        userManage.currentItem = item;
+        userManage.permissionItemInit(item);
+    });
 	
 	$("#toggle-advanced-search").click(function(){
 		$("i",this).toggleClass("fa-angle-double-down fa-angle-double-up");
@@ -214,7 +204,7 @@ var userManage = {
 		//组装查询参数
 		param.fuzzySearch = userManage.fuzzySearch;
 		if (userManage.fuzzySearch) {
-			param.role = $("#fuzzy-search").val();
+			param.name = $("#fuzzy-search").val();
 		}else{
 			param.name = $("#name-search").val();
 			param.role = $("#role-search").val();
@@ -239,27 +229,15 @@ var userManage = {
         window.location.href="./initAdd";
 	},
 	editItemInit : function(item) {
-		if (!item) {
-			return;
+		if (item) {
+            window.location.href="./initEdit/"+item.id;
 		}
-//		$("#form-edit")[0].reset();
-//		$("#title-edit").text(item.name);
-//		$("#name-edit").val(item.name);
-//		$("#position-edit").val(item.position);
-//		$("#salary-edit").val(item.salary);
-//		$("#start-date-edit").val(item.start_date);
-//		$("#office-edit").val(item.office);
-//		$("#extn-edit").val(item.extn);
-//		$("#role-edit").val(item.role);
-		
-//		$("#user-edit").show().siblings(".info-block").hide();
 	},
-//	addItemSubmit : function() {
-//		$.dialog.tips('保存当前添加用户');
-//	},
-//	editItemSubmit : function() {
-//		$.dialog.tips('保存当前编辑用户');
-//	},
+    permissionItemInit : function(item) {
+        if (item) {
+            window.location.href="./initEditPermission/"+item.id;
+        }
+    },
 	deleteItem : function(selectedItems) {
 		var message;
 		if (selectedItems&&selectedItems.length) {

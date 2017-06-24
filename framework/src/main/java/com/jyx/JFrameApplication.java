@@ -1,7 +1,5 @@
 package com.jyx;
 
-
-import com.jyx.config.DynamicDataSource.DynamicDataSourceRegister;
 import com.jyx.util.spring.SpringUtil;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
@@ -28,7 +26,7 @@ import javax.jms.Topic;
  * 加载工具类，用于获取Spring管理的类SpringUtil
  * 加载多数据源DynamicDataSourceRegister
  * */
-@Import(value = {SpringUtil.class, DynamicDataSourceRegister.class})
+@Import(value = {SpringUtil.class})
 //@Import(value={SpringUtil.class})
 
 /**

@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import com.jyx.pojo.SysDict;
 
-public interface SysDictDao extends JpaRepository<SysDict, String>, JpaSpecificationExecutor<SysDict>{    
+import java.util.List;
 
+public interface SysDictDao extends JpaRepository<SysDict, String>, JpaSpecificationExecutor<SysDict>{    
+    List<SysDict> findById(List<String> ids);
 }	

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.logging.log4j:log4j-nosql:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-nosql/unknown/log4j-nosql-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-nosql/unknown/log4j-nosql-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-nosql/unknown/log4j-nosql-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

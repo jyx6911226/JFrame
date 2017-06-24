@@ -156,6 +156,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-nosql</artifactId> <!-- 必需，否则报错 -->
+            <version>2.7</version>
         </dependency>
         <!-- 数据库连接池 druid-->
         <dependency>

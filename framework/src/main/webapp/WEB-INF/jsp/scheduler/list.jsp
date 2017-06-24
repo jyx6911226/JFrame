@@ -89,12 +89,12 @@
 													id="toggle-advanced-search">
 													<i class="fa fa-angle-double-down"></i>
 												</button>
-												<shiro:hasPermission name="SysDict-Add-Btn">
+												<shiro:hasPermission name="SysScheduler-Add-Btn">
 													<button type="button" class="btn btn-primary" id="btn-add">
 														<i class="fa fa-plus"></i> 添加
 													</button>
 												</shiro:hasPermission>
-												<shiro:hasPermission name="SysDict-Del-Btn">
+												<shiro:hasPermission name="SysScheduler-Del-Btn">
 													<button type="button" class="btn btn-danger" id="btn-del">
 														<i class="fa fa-remove"></i> 删除
 													</button>
@@ -191,5 +191,19 @@
 		src="${pageContext.request.contextPath}/js/lib/json2.js"></script>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<script>
+        var shiro_Update_Btn = false;
+        var shiro_Del_Btn = false;
+	</script>
+	<shiro:hasPermission name="SysScheduler-Update-Btn">
+		<script>
+            shiro_Update_Btn = true;
+		</script>
+	</shiro:hasPermission>
+	<shiro:hasPermission name="SysScheduler-Del-Btn">
+		<script>
+            shiro_Del_Btn  = true;
+		</script>
+	</shiro:hasPermission>
 </body>
 </html>

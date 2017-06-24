@@ -67,7 +67,10 @@ $(function (){
         "createdRow": function ( row, data, index ) {
             var $btnEdit = $('<button type="button" class="btn btn-small btn-primary btn-edit">修改</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
-            $('td', row).eq(5).append($btnEdit).append($btnDel);
+            if(shiro_Update_Btn){
+            $('td', row).eq(5).append($btnEdit);}
+            if(shiro_Del_Btn){
+            $('td', row).eq(5).append($btnDel);}
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调

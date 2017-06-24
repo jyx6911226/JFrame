@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,9 +125,13 @@
                     </div>
                 </div>
                 <div class="box-footer">
+                    <shiro:hasPermission name="SysPermission-Add-Btn">
                     <button type="button" id="add_child_node" class="btn btn-default btn-left">添加子权限</button>
                     <button type="submit" class="btn btn-info">保存</button>
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="SysPermission-Del-Btn">
                     <button type="button" id="del_node" class="btn btn-danger btn-del">删除</button>
+                    </shiro:hasPermission>
                 </div>
             </form>
         </div>
@@ -140,14 +145,6 @@
 <!-- Bootstrap 3.3.6 -->
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/AdminLTE-2.3.7/bootstrap/js/bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/slimScroll/jquery.slimscroll.min.js"></script> -->
-<!-- FastClick -->
-<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/fastclick/fastclick.js"></script>  -->
-<!-- AdminLTE App
-<script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/js/app.min.js"></script>-->
-<!-- AdminLTE for demo purposes -->
-<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/js/demo.js"></script>  -->
 <!-- SpinJS-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/lib/spin-2.1.0/jquery.spin.merge.js"></script>
 <!-- lhgdialog -->

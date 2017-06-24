@@ -2,192 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83449f07-fd2d-4958-a5a2-e3cf1401e4fa" name="Default" comment="修复bug">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_1_4_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_4_1_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/config/DynamicDataSource/DynamicDataSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/config/DynamicDataSource/DynamicDataSourceAspect.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/config/DynamicDataSource/DynamicDataSourceContextHolder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/config/DynamicDataSource/DynamicDataSourceRegister.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/config/DynamicDataSource/TargetDataSource.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/rebel.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/config/DynamicDataSource/DynamicDataSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/config/DynamicDataSource/DynamicDataSourceAspect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/config/DynamicDataSource/DynamicDataSourceContextHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/config/DynamicDataSource/DynamicDataSourceRegister.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/config/DynamicDataSource/TargetDataSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/exception/IncorrectCaptchaException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/exception/MyException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/pojo/LoginPara.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/runner/StartupRunner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/schedule/SchedulingConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/util/captcha/CaptchaUsernamePasswordToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/validation/ValiderLevel1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/validation/ValiderLevel2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/jyx/validation/ValiderLevel3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/DynamicDataSource/DynamicDataSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/DynamicDataSource/DynamicDataSourceAspect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/DynamicDataSource/DynamicDataSourceContextHolder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/DynamicDataSource/DynamicDataSourceRegister.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/DynamicDataSource/TargetDataSource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/CodeUtilController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/EHCacheController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/EditorController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/ExceptionController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/FileUploadController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/JpaController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/LanguageController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/RedisController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/RestController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/SettingController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/ShiroController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/SwaggerController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/TemplateController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/ValidController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/ManyObj1Dao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/ManyObj2Dao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/OneObj1Dao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/OneObj2Dao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/TestEHCacheDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/TestJPADao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/TestJdbcTemplateImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/dao/TestRedisDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/exception/IncorrectCaptchaException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/exception/MyException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/filter/KaptchaFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/jsm/Consumer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/jsm/Consumer2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/jsm/Producer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/LoginPara.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/ManyObj1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/ManyObj2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/OneObj1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/OneObj2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/TestJPA.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/TestRedis.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/TestRestObject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/TestSettings.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/TestValid.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/runner/StartupRunner.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/schedule/SchedulingConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/ManyObjService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/OneObjService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/TestEHCacheService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/TestJpaService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/TestRedisService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/TestService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/ManyObjServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/OneObjServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/TestEHCacheServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/TestJpaServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/TestRedisServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/TestServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/captcha/CaptchaUsernamePasswordToken.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderLevel1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderLevel2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderLevel3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/jpa.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/validTest.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/lib/kaptcha-2.3.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.jyx.MultipleDateSourceTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/com.jyx.MultipleDateSourceTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/jyx/MultipleDateSourceTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jyx/JFrameApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/jyx/JFrameApplication.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/jyx/controller/UserInfoController.class" afterPath="$PROJECT_DIR$/target/classes/com/jyx/controller/UserInfoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/JFrameApplication.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/JFrameApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/ServletInitializer.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/ServletInitializer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/MyShiroRealm.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/MyShiroRealm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/RedisCacheConfig$1.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/RedisCacheConfig$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/RedisCacheConfig.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/RedisCacheConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/ShiroConfiguration.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/ShiroConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/SwaggerConfig.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/SwaggerConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/WebAppConfigurer.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/config/WebAppConfigurer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/IndexController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/LoginController.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/RegisterController.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/RegisterController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/SysPermissionController.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/SysPermissionController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/SysRoleController.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/SysRoleController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/UserInfoController.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/controller/UserInfoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/druid/DruidConfiguration.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/druid/DruidConfiguration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/environment/AppEnvironmentAware.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/environment/AppEnvironmentAware.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/exception/GlobalDefaultExceptionHandler.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/exception/GlobalDefaultExceptionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/SysPermission.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/SysPermission.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/SysRole.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/SysRole.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/UserInfo.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/pojo/UserInfo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/SysPermissionService.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/SysPermissionService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/SysRoleService.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/SysRoleService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/UserInfoService.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/UserInfoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/SysPermissionServiceImpl.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/SysPermissionServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/SysRoleServiceImpl.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/SysRoleServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/UserInfoServiceImpl.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/service/impl/UserInfoServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/i18n/I18nUtil.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/i18n/I18nUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications$1$1.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications$1.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications$2.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/jpa/DynamicSpecifications.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/qrcode/BarcodeUtil.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/qrcode/BarcodeUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/qrcode/QRcodeUtil.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/qrcode/QRcodeUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/spring/SpringUtil.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/spring/SpringUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/Html2Pdf.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/Html2Pdf.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilClock$DefaultClock.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilClock$DefaultClock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilClock$MockClock.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilClock$MockClock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilClock.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilClock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilDate.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilDate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilEncodes.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilEncodes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilFile.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilFile.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilIdGenerate.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilIdGenerate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilOS.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilOS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilRandom.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilRandom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilStr.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/util/utils/UtilStr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderBaseLevel.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderBaseLevel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderUtil.class" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/com/jyx/validation/ValiderUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/jyx/JPATest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/jyx/JPATest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/framework_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/framework_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_21.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_21.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework.iml" afterPath="$PROJECT_DIR$/framework.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/jframe/error.log" afterPath="$PROJECT_DIR$/logs/jframe/error.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/jframe/info.log" afterPath="$PROJECT_DIR$/logs/jframe/info.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/jframe/warn.log" afterPath="$PROJECT_DIR$/logs/jframe/warn.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/JFrameApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/JFrameApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/controller/UserInfoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/controller/UserInfoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDetailDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDetailDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysSchedulerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysSchedulerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/dao/UserInfoDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/dao/UserInfoDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/quartz/SchedulerUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/quartz/SchedulerUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictDetailService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictDetailService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictService.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictDetailServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictDetailServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/jyx/JPATest.java" afterPath="$PROJECT_DIR$/src/test/java/com/jyx/JPATest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysrole.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysrole.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/datatables/userinfo.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/datatables/userinfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/add.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/editRole.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/editRole.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/add.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/detail/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/detail/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/view.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/view.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/add.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/syspermission/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/syspermission/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysrole/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysrole/list.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/rebel.xml" afterPath="$PROJECT_DIR$/target/classes/rebel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/application.properties" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/static/js/datatables/sysrole.js" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/static/js/datatables/sysrole.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/classes/static/js/datatables/userinfo.js" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/classes/static/js/datatables/userinfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/account/add.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/account/add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/account/list.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/account/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/account/view.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/account/view.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/ckeditor.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/ckeditor.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/login.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/register.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/syspermission/list.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/syspermission/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/sysrole/add.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/sysrole/add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/sysrole/list.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/sysrole/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/sysrole/view.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/sysrole/view.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/welcome.jsp" afterPath="$PROJECT_DIR$/target/framework/WEB-INF/jsp/welcome.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.jyx.JPATest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.jyx.JPATest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.jyx.JPATest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.jyx.JPATest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/datatables/sysrole.js" afterPath="$PROJECT_DIR$/target/classes/static/js/datatables/sysrole.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/datatables/userinfo.js" afterPath="$PROJECT_DIR$/target/classes/static/js/datatables/userinfo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_nosql_unknown.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_nosql_2_7.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -203,106 +49,32 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SysDictController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictController.java">
+      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="121" column="62" lean-forward="false" selection-start-line="121" selection-start-column="62" selection-end-line="121" selection-end-column="62" />
+            <state relative-caret-position="320">
+              <caret line="205" column="17" lean-forward="true" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SysDictDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDao.java">
+      <file leaf-file-name="sysscheduler.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysDictDetailController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictDetailController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sysdict.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="253" column="13" lean-forward="false" selection-start-line="253" selection-start-column="13" selection-end-line="253" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysDictServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysDictService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysDictDetailServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictDetailServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="22" column="84" lean-forward="false" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rebel.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="75" lean-forward="true" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysDictDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysDictDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysDict.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysDict.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="42" />
+            <state relative-caret-position="228">
+              <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -333,6 +105,8 @@
       <find>parent_ids</find>
       <find>deleteItem</find>
       <find>deleteSysDictsAndDetails</find>
+      <find>mongodb-driver</find>
+      <find>系统任务</find>
     </findStrings>
     <replaceStrings>
       <replace>scheduler</replace>
@@ -351,43 +125,54 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysscheduler/add.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysscheduler/view.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysscheduler/list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/JobFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/QuartzConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/jobs/SchedulerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysScheduler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/SchedulerManager.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/add.jsp" />
         <option value="$PROJECT_DIR$/target/classes/rebel.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/service/SysSchedulerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysSchedulerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/runner/SchedulerRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/jobs/SchedulerTest2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/jobs/SchedulerTest3.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/add.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/jobs/SchedulerTest1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/JFrameApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/controller/SysSchedulerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/quartz/SchedulerUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jyx/controller/UserInfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysDict.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/dao/UserInfoDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysSchedulerDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/jyx/JPATest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDetailDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysDictDetail.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/dao/SysDictDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictDetailServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictDetailService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/syspermission/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/detail/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/add.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/editRole.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/add.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/view.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/add.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jyx/controller/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/datatables/userinfo.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/datatables/sysrole.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysrole/list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/list.jsp" />
       </list>
     </option>
   </component>
@@ -444,7 +229,9 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -562,7 +349,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -603,322 +389,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dict" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dict" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="detail" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jyx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jyx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jyx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1481,7 +954,8 @@
       <workItem from="1498187631838" duration="1718000" />
       <workItem from="1498199529715" duration="660000" />
       <workItem from="1498263903577" duration="2918000" />
-      <workItem from="1498276605303" duration="16510000" />
+      <workItem from="1498276605303" duration="16602000" />
+      <workItem from="1498307434305" duration="12204000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1497866173985</created>
@@ -1511,7 +985,21 @@
       <option name="project" value="LOCAL" />
       <updated>1498116128653</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修复bug">
+      <created>1498295283192</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1498295283192</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修复bug">
+      <created>1498295337028</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1498295337028</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1547,7 +1035,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73987000" />
+    <option name="totallyTimeSpent" value="86283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1560,7 +1048,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1571,13 +1059,13 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1586,11 +1074,11 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290469" sideWeight="0.46317512" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3343419" sideWeight="0.45826513" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30937973" sideWeight="0.53594774" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3343419" sideWeight="0.5417349" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1626,142 +1114,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/config/DynamicDataSource/DynamicDataSourceContextHolder.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/JFrameApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2599#2600#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysSchedulerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="172" column="66" lean-forward="false" selection-start-line="172" selection-start-column="66" selection-end-line="172" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/quartz/JobFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/quartz/ParamsVerify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/quartz/SchedulerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="43" column="20" lean-forward="true" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="157" column="65" lean-forward="false" selection-start-line="157" selection-start-column="65" selection-end-line="157" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/quartz/SchedulerUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="55" column="56" lean-forward="true" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysPermissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysRoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/UserInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/SysSchedulerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="33" column="58" lean-forward="false" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1769,9 +1125,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1779,9 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1789,7 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1797,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1805,7 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1813,7 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1821,7 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1829,7 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1845,72 +1189,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="120" lean-forward="false" selection-start-line="10" selection-start-column="120" selection-end-line="10" selection-end-column="120" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysDictDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="47" column="35" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="97" column="108" lean-forward="false" selection-start-line="97" selection-start-column="101" selection-end-line="97" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3078">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/syspermission/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1011">
-          <caret line="297" column="9" lean-forward="true" selection-start-line="297" selection-start-column="9" selection-end-line="297" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/view.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysrole.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/userinfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3192">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="741">
+          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1931,51 +1216,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1482">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3876">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/detail/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6663">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="253" column="13" lean-forward="false" selection-start-line="253" selection-start-column="13" selection-end-line="253" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/pojo/SysDict.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="494">
           <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictDetailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="68" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1655#1656#0" expanded="false" />
+            <element signature="e#1669#1670#0" expanded="false" />
+            <element signature="e#2022#2023#0" expanded="false" />
+            <element signature="e#2038#2039#0" expanded="false" />
+            <element signature="e#2071#2072#0" expanded="false" />
+            <element signature="e#2090#2091#0" expanded="false" />
+            <element signature="e#2118#2119#0" expanded="false" />
+            <element signature="e#2136#2137#0" expanded="false" />
+            <element signature="e#2173#2174#0" expanded="false" />
+            <element signature="e#2196#2197#0" expanded="false" />
+            <element signature="e#2224#2225#0" expanded="false" />
+            <element signature="e#2242#2243#0" expanded="false" />
+            <element signature="e#2279#2280#0" expanded="false" />
+            <element signature="e#2302#2303#0" expanded="false" />
+            <element signature="e#2356#2357#0" expanded="false" />
+            <element signature="e#2387#2388#0" expanded="false" />
+            <element signature="e#2463#2464#0" expanded="false" />
+            <element signature="e#2512#2513#0" expanded="false" />
+            <element signature="e#2545#2546#0" expanded="false" />
+            <element signature="e#2570#2571#0" expanded="false" />
+            <element signature="e#2619#2620#0" expanded="false" />
+            <element signature="e#2656#2657#0" expanded="false" />
+            <element signature="e#2692#2693#0" expanded="false" />
+            <element signature="e#2720#2721#0" expanded="false" />
+            <element signature="e#2775#2776#0" expanded="false" />
+            <element signature="e#2818#2819#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1983,33 +1256,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="121" column="62" lean-forward="false" selection-start-line="121" selection-start-column="62" selection-end-line="121" selection-end-column="62" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/impl/SysDictServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="95">
           <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/service/SysDictService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2017,9 +1284,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="73" lean-forward="false" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="75" lean-forward="false" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2031,10 +1303,244 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
+    <entry file="file://$PROJECT_DIR$/logs/jframe/error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/jframe/warn.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/jframe/info.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="225" column="118" lean-forward="true" selection-start-line="225" selection-start-column="118" selection-end-line="225" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/JFrameApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="e#2599#2600#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="51" column="79" lean-forward="false" selection-start-line="51" selection-start-column="79" selection-end-line="51" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="146" column="23" lean-forward="true" selection-start-line="146" selection-start-column="23" selection-end-line="146" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysPermissionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/syspermission/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="15" column="75" lean-forward="true" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
+          <caret line="258" column="79" lean-forward="true" selection-start-line="258" selection-start-column="32" selection-end-line="258" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="102" column="57" lean-forward="false" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/editRole.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="107" column="33" lean-forward="true" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1531">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/detail/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="86" column="50" lean-forward="true" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="69" column="103" lean-forward="false" selection-start-line="69" selection-start-column="103" selection-end-line="69" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="120" column="75" lean-forward="false" selection-start-line="120" selection-start-column="75" selection-end-line="120" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/add.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="90" column="69" lean-forward="true" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysDictController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="85" column="51" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/dict/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="175" column="28" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysdict.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="95" column="48" lean-forward="false" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/userinfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="91" column="27" lean-forward="false" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysSchedulerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="84" column="33" lean-forward="false" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jyx/controller/SysRoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="148" column="61" lean-forward="false" selection-start-line="148" selection-start-column="33" selection-end-line="148" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysrole.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="88" column="48" lean-forward="true" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/sysrole/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="62" lean-forward="false" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/account/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/datatables/sysscheduler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/scheduler/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="205" column="17" lean-forward="true" selection-start-line="205" selection-start-column="17" selection-end-line="205" selection-end-column="17" />
           <folding />
         </state>
       </provider>

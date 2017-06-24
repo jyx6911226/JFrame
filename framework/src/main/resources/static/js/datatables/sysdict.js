@@ -77,7 +77,12 @@ $(function (){
             var $btnEdit = $('<button type="button" class="btn btn-small btn-primary btn-edit">修改</button>');
             var $btnDetail = $('<button type="button" id = "btn_detail" class="btn btn-small btn-info btn-edit">明细</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
-            $('td', row).eq(3).append($btnEdit).append($btnDetail).append($btnDel);
+			if(shiro_Update_Btn){
+            $('td', row).eq(3).append($btnEdit);}
+            if(shiro_UpdateDetail_Btn){
+            $('td', row).eq(3).append($btnDetail);}
+            if(shiro_Del_Btn){
+            $('td', row).eq(3).append($btnDel);}
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,17 +31,6 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/css/skins/_all-skins.min.css">
-
-<!-- Bootstrap -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/bootstrap-2.3.2/css/bootstrap.min.css" media="screen">  -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/bootstrap-2.3.2/css/bootstrap-responsive.min.css" media="screen">  -->
-<!-- FontAwesome -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/font-awesome-4.2.0/css/font-awesome.min.css">  -->
-<!-- DataTables CSS start-->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/dataTables-1.10.7/plugins/integration/bootstrap/2/dataTables.bootstrap.css">  -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/dataTables-1.10.7/plugins/integration/font-awesome/dataTables.fontAwesome.css">  -->
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 
 
@@ -91,12 +81,16 @@
 													id="toggle-advanced-search">
 													<i class="fa fa-angle-double-down"></i>
 												</button>
-												<button type="button" class="btn btn-primary" id="btn-add">
-													<i class="fa fa-plus"></i> 添加
-												</button>
-												<button type="button" class="btn btn-danger" id="btn-del">
-													<i class="fa fa-remove"></i> 删除
-												</button>
+                                                <shiro:hasPermission name="UserInfo-Add-Btn">
+                                                    <button type="button" class="btn btn-primary" id="btn-add">
+                                                        <i class="fa fa-plus"></i> 添加
+                                                    </button>
+                                                </shiro:hasPermission>
+                                                <shiro:hasPermission name="UserInfo-Del-Btn">
+                                                    <button type="button" class="btn btn-danger" id="btn-del">
+                                                        <i class="fa fa-remove"></i> 删除
+                                                    </button>
+                                                </shiro:hasPermission>
 											</div>
 										</div>
 									</div>
@@ -115,7 +109,7 @@
 									type="text" class="input-medium" placeholder="电子邮箱"
 									id="email-search">
 
-								<!-- <span>在线状态:</span>
+                            <!-- <span>在线状态:</span>
                             <select class="input-small" id="status-search">
                                 <option value="">全部</option>
                                 <option value="1">在线</option>
@@ -187,14 +181,6 @@
 		src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/datatables/jquery.dataTables.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/datatables/dataTables.bootstrap.js"></script>
-	<!-- SlimScroll -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/slimScroll/jquery.slimscroll.min.js"></script> -->
-	<!-- FastClick -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/fastclick/fastclick.js"></script>  -->
-	<!-- AdminLTE App -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/js/app.min.js"></script>  -->
-	<!-- AdminLTE for demo purposes -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/js/demo.js"></script>  -->
 	<!-- SpinJS-->
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/js/lib/spin-2.1.0/jquery.spin.merge.js"></script>
@@ -210,5 +196,25 @@
 		src="${pageContext.request.contextPath}/js/lib/json2.js"></script>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script>
+        var shiro_Update_Btn = false;
+        var shiro_UpdateRole_Btn = false;
+        var shiro_Del_Btn = false;
+    </script>
+    <shiro:hasPermission name="UserInfo-Update-Btn">
+        <script>
+            shiro_Update_Btn = true;
+        </script>
+    </shiro:hasPermission>
+    <shiro:hasPermission name="UserInfo-UpdateRole-Btn">
+        <script>
+            shiro_UpdateRole_Btn  = true;
+        </script>
+    </shiro:hasPermission>
+    <shiro:hasPermission name="UserInfo-Del-Btn">
+        <script>
+            shiro_Del_Btn  = true;
+        </script>
+    </shiro:hasPermission>
 </body>
 </html>

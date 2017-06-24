@@ -81,7 +81,12 @@ $(function (){
             var $btnPersission = $('<button type="button" id = "btn_persission" class="btn btn-small btn-info btn-edit">权限挂接</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
             //var $btnView = $('<button type="button" class="btn btn-small btn-danger btn-del">查看</button>');
-            $('td', row).eq(5).append($btnEdit).append($btnPersission).append($btnDel);
+			if(shiro_Update_Btn){
+			$('td', row).eq(5).append($btnEdit);}
+            if(shiro_UpdatePermission_Btn){
+            $('td', row).eq(5).append($btnPersission);}
+            if(shiro_Del_Btn){
+            $('td', row).eq(5).append($btnDel);}
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调

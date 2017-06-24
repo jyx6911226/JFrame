@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,14 +171,6 @@
 		src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/datatables/jquery.dataTables.js"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/datatables/dataTables.bootstrap.js"></script>
-	<!-- SlimScroll -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/slimScroll/jquery.slimscroll.min.js"></script> -->
-	<!-- FastClick -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/plugins/fastclick/fastclick.js"></script>  -->
-	<!-- AdminLTE App -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/js/app.min.js"></script>  -->
-	<!-- AdminLTE for demo purposes -->
-	<!-- <script type="text/javascript" src="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/js/demo.js"></script>  -->
 	<!-- SpinJS-->
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/js/lib/spin-2.1.0/jquery.spin.merge.js"></script>
@@ -193,5 +186,25 @@
 		src="${pageContext.request.contextPath}/js/lib/json2.js"></script>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<script>
+        var shiro_Update_Btn = false;
+        var shiro_UpdatePermission_Btn = false;
+        var shiro_Del_Btn = false;
+	</script>
+	<shiro:hasPermission name="SysRole-Add-Btn">
+		<script>
+            shiro_Update_Btn = true;
+		</script>
+	</shiro:hasPermission>
+	<shiro:hasPermission name="SysRole-UpdatePermission-Btn">
+		<script>
+            shiro_UpdatePermission_Btn  = true;
+		</script>
+	</shiro:hasPermission>
+	<shiro:hasPermission name="SysRole-Del-Btn">
+		<script>
+            shiro_Del_Btn  = true;
+		</script>
+	</shiro:hasPermission>
 </body>
 </html>

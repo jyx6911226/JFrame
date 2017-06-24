@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,7 +88,9 @@
                         <span class="form-control-feedback"></span>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-info">保存</button>
+                        <shiro:hasPermission name="UserInfo-Add-Btn">
+                            <button type="submit" class="btn btn-info">保存</button>
+                        </shiro:hasPermission>
                     </div>
                 </form>
             </div>

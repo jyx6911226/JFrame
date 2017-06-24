@@ -89,7 +89,12 @@ $(function (){
             var $btnRole = $('<button type="button" id = "btn_role" class="btn btn-small btn-info btn-edit">角色挂接</button>');
             var $btnDel = $('<button type="button" class="btn btn-small btn-danger btn-del">删除</button>');
             //var $btnView = $('<button type="button" class="btn btn-small btn-danger btn-del">查看</button>');
-            $('td', row).eq(7).append($btnEdit).append($btnRole).append($btnDel);
+			if(shiro_Update_Btn){
+            $('td', row).eq(7).append($btnEdit);}
+            if(shiro_UpdateRole_Btn){
+            $('td', row).eq(7).append($btnRole);}
+            if(shiro_Del_Btn){
+            $('td', row).eq(7).append($btnDel);}
         },
         "drawCallback": function( settings ) {
         	//渲染完毕后的回调

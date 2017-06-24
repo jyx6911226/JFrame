@@ -93,14 +93,14 @@ public class UserInfoController {
         return "account/view";
     }
 
-    @RequiresPermissions(value={"UserInfo-Add-Btn"})
+    @RequiresPermissions(value={"UserInfo-Update-Btn"})
     @RequestMapping("/initEdit/{id}")
     public String initEdit(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
         return "account/add";
     }
 
-    @RequiresPermissions(value={"UserInfo-Update-Btn"})
+    @RequiresPermissions(value={"UserInfo-UpdateRole-Btn"})
     @RequestMapping("/initEditRole/{id}")
     public String initEditRole(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);

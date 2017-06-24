@@ -31,21 +31,6 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/AdminLTE-2.3.7/dist/css/skins/_all-skins.min.css">
-
-<!-- Bootstrap -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/bootstrap-2.3.2/css/bootstrap.min.css" media="screen">  -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/bootstrap-2.3.2/css/bootstrap-responsive.min.css" media="screen">  -->
-<!-- FontAwesome -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/font-awesome-4.2.0/css/font-awesome.min.css">  -->
-<!-- DataTables CSS start-->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/dataTables-1.10.7/plugins/integration/bootstrap/2/dataTables.bootstrap.css">  -->
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/js/lib/dataTables-1.10.7/plugins/integration/font-awesome/dataTables.fontAwesome.css">  -->
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-
-
-    <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<!-- Content Wrapper. Contains page content -->
@@ -187,5 +172,25 @@
 		src="${pageContext.request.contextPath}/js/lib/json2.js"></script>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<script>
+        var shiro_Update_Btn = false;
+        var shiro_UpdateDetail_Btn = false;
+        var shiro_Del_Btn = false;
+	</script>
+	<shiro:hasPermission name="SysDict-Update-Btn">
+		<script>
+            shiro_Update_Btn = true;
+		</script>
+	</shiro:hasPermission>
+	<shiro:hasPermission name="SysDict-UpdateDetail-Btn">
+		<script>
+            shiro_UpdateDetail_Btn  = true;
+		</script>
+	</shiro:hasPermission>
+	<shiro:hasPermission name="SysDict-Del-Btn">
+		<script>
+            shiro_Del_Btn  = true;
+		</script>
+	</shiro:hasPermission>
 </body>
 </html>

@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/userInfo")
 public class UserInfoController {
     @Resource
     private UserInfoService userInfoService;
@@ -32,12 +31,12 @@ public class UserInfoController {
     private Logger log = LoggerFactory.getLogger(UserInfoController.class);
 
     @RequiresPermissions(value={"UserInfo-List"})
-    @RequestMapping("/initList")
+    @RequestMapping(value = "/userInfo/initList", method = RequestMethod.GET)
     public String initAccountList() {
         return "account/list";
     }
     @RequiresPermissions(value={"UserInfo-Search-Interf"})
-    @RequestMapping("/getAccountList")
+    @RequestMapping(value = "/userInfos", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getAccountList(UserInfo searchObj,
                                               String draw,
@@ -81,27 +80,27 @@ public class UserInfoController {
     }
 
     @RequiresPermissions(value={"UserInfo-Add-Btn"})
-    @RequestMapping("/initAdd")
+    @RequestMapping(value = "/userInfo/initAdd", method = RequestMethod.GET)
     public String initAdd() {
         return "account/add";
     }
 
     @RequiresPermissions(value={"UserInfo-View"})
-    @RequestMapping("/initView/{id}")
+    @RequestMapping(value = "/userInfo/initView/{id}", method = RequestMethod.GET)
     public String initView(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
         return "account/view";
     }
 
     @RequiresPermissions(value={"UserInfo-Update-Btn"})
-    @RequestMapping("/initEdit/{id}")
+    @RequestMapping(value = "/userInfo/initEdit/{id}", method = RequestMethod.GET)
     public String initEdit(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
         return "account/add";
     }
 
     @RequiresPermissions(value={"UserInfo-UpdateRole-Btn"})
-    @RequestMapping("/initEditRole/{id}")
+    @RequestMapping(value = "/userInfo/initEditRole/{id}", method = RequestMethod.GET)
     public String initEditRole(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
         return "account/editRole";
@@ -109,7 +108,7 @@ public class UserInfoController {
 
     //管理员添加用户
     @RequiresPermissions(value={"UserInfo-Add-Interf"})
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/userInfo", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(UserInfo obj, Model model) {
         Map<String, Object> resdata = new HashMap<>();
@@ -134,7 +133,7 @@ public class UserInfoController {
     }
 
     @RequiresPermissions(value={"UserInfo-List"})
-    @RequestMapping({"/validUnique"})
+    @RequestMapping(value = "/userInfo/validUnique",  method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Boolean> validUnique(UserInfo searchObj) {
         boolean valid = false;
@@ -161,7 +160,7 @@ public class UserInfoController {
     }
     
     @RequiresPermissions(value={"UserInfo-Del-Interf"})  
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/userInfo", method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<UserInfo> objs) {
         Map<String, Object> resdata = new HashMap<>();

@@ -31,7 +31,7 @@ public class SysRole implements Serializable {
     private Boolean available;  // 是否可用,如果不可用将不会添加给用户
     // 角色 -- 权限关系：多对多关系;
     @JsonIgnore
-    @ManyToMany(cascade={ CascadeType.ALL},fetch=FetchType.EAGER)
+    @ManyToMany(cascade={ CascadeType.PERSIST},fetch=FetchType.EAGER)
     @JoinTable(name="sys_role_permission" ,
             joinColumns=@JoinColumn(name="role_id") ,
             inverseJoinColumns=@JoinColumn(name="permission_id"))

@@ -22,20 +22,19 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/dictDetail")
 public class SysDictDetailController {
     @Resource
     private SysDictDetailService sysDictDetailService;
     
     @RequiresPermissions(value={"SysDictDetail-ListByDict"})
-    @RequestMapping("/initList/{id}")
+    @RequestMapping(value = "/dictDetail/initList/{id}",method = RequestMethod.GET)
     public String initList(@PathVariable(value = "id") SysDict obj, Model model) {
     	model.addAttribute("obj", obj);
         return "dict/detail/list";
     }
     
     @RequiresPermissions(value={"SysDictDetail-Search-Interf"})
-    @RequestMapping("/getList")
+    @RequestMapping(value = "/dictDetails" ,method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getList(SysDictDetail searchObj,
                                               String draw,
@@ -78,7 +77,7 @@ public class SysDictDetailController {
     }
     
     @RequiresPermissions(value={"SysDictDetail-GetListByDict-Interf"})
-    @RequestMapping("/getListByDict/{id}")
+    @RequestMapping(value = "/dictDetails/{id}",method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getListByDict(@PathVariable(value = "id") SysDict obj) {
     	SysDictDetail searchObj = new SysDictDetail();
@@ -101,7 +100,7 @@ public class SysDictDetailController {
     }
 
     @RequiresPermissions(value={"SysDictDetail-Add-Interf"})
-    @RequestMapping( path = "/{dictId}",method = RequestMethod.POST)
+    @RequestMapping( value = "/dictDetail/{dictId}",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(@PathVariable(value = "dictId") SysDict sysDict, SysDictDetail obj, Model model) {
         Map<String, Object> resdata = new HashMap<>();
@@ -118,7 +117,7 @@ public class SysDictDetailController {
     }
     
     @RequiresPermissions(value={"SysDictDetail-Del-Interf"})
-    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/dictDetail/{id}", method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@PathVariable(value = "id") SysDictDetail obj) {
         Map<String, Object> resdata = new HashMap<>();
@@ -140,7 +139,7 @@ public class SysDictDetailController {
     }
 
     @RequiresPermissions(value={"SysDictDetail-ListByDict"})
-    @RequestMapping({"/validUnique"})
+    @RequestMapping(value = "/dictDetail/validUnique", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Boolean> validUnique(SysDictDetail searchObj, String dictId) {
         boolean valid = false;

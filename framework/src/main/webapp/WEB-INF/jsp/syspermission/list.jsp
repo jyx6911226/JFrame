@@ -336,6 +336,9 @@
 <script type="text/javascript">
     $("#add_child_node").click(function () {
         var pid = $("#node_id").val();
+        if(pid == ""){
+            return;
+        }
         var pname = $("#node_name").val();
         var pids = $("#parent_ids").val() + pid + ",";
         $("#node_id").val("");

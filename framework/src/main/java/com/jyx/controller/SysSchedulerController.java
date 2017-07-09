@@ -1,12 +1,8 @@
 package com.jyx.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
 import com.jyx.pojo.SysScheduler;
 import com.jyx.quartz.SchedulerUtil;
-import com.jyx.service.SysSchedulerService;
 import com.jyx.service.SysSchedulerService;
 import com.jyx.util.jpa.SearchFilter;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -26,20 +22,19 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/scheduler")
 public class SysSchedulerController {
     @Resource
     private SysSchedulerService sysSchedulerService;
     @Resource
     private SchedulerUtil schedulerUtil;
     @RequiresPermissions(value={"SysScheduler-List"})
-    @RequestMapping("/initList")
+    @RequestMapping(value = "/scheduler/initList", method = RequestMethod.GET)
     public String initList() {
         return "scheduler/list";
     }
     
     @RequiresPermissions(value={"SysScheduler-Search-Interf"})
-    @RequestMapping("/getList")
+    @RequestMapping(value = "/schedulers", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getList(SysScheduler searchObj,
                                               String draw,
@@ -83,27 +78,27 @@ public class SysSchedulerController {
     }
 
     @RequiresPermissions(value={"SysScheduler-Add-Btn"})
-    @RequestMapping("/initAdd")
+    @RequestMapping(value = "/scheduler/initAdd", method = RequestMethod.GET)
     public String initAdd() {
         return "scheduler/add";
     }
 
     @RequiresPermissions(value={"SysScheduler-View"})
-    @RequestMapping("/initView/{id}")
+    @RequestMapping(value = "/scheduler/initView/{id}", method = RequestMethod.GET)
     public String initView(@PathVariable(value = "id") SysScheduler obj, Model model) {
         model.addAttribute("obj", obj);
         return "scheduler/view";
     }
 
     @RequiresPermissions(value={"SysScheduler-Update-Btn"})
-    @RequestMapping("/initEdit/{id}")
+    @RequestMapping(value = "/scheduler/initEdit/{id}", method = RequestMethod.GET)
     public String initEdit(@PathVariable(value = "id") SysScheduler obj, Model model) {
         model.addAttribute("obj", obj);
         return "scheduler/add";
     }
     
     @RequiresPermissions(value={"SysScheduler-Add-Interf"})
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/scheduler", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysScheduler obj, Model model) {
         Map<String, Object> resdata = new HashMap<>();
@@ -119,7 +114,7 @@ public class SysSchedulerController {
     }
     
     @RequiresPermissions(value={"SysScheduler-Del-Interf"})
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/scheduler",method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<SysScheduler> objs) {
         Map<String, Object> resdata = new HashMap<>();
@@ -135,7 +130,7 @@ public class SysSchedulerController {
     }
 
     @RequiresPermissions(value={"SysScheduler-List"})
-    @RequestMapping({"/validUnique"})
+    @RequestMapping(value = "/scheduler/validUnique", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Boolean> validUnique(SysScheduler searchObj) {
         boolean valid = false;
@@ -168,7 +163,7 @@ public class SysSchedulerController {
     }
 
     @RequiresPermissions(value={"SysScheduler-List"})
-    @RequestMapping({"/validJobParams"})
+    @RequestMapping(value = "/scheduler/validJobParams" , method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Boolean> validJobParams(String jobParams) {
         boolean valid = false;

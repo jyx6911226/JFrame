@@ -324,7 +324,7 @@
 		<div class="content-wrapper">
 			<iframe name="content_iframe"
 				src="${pageContext.request.contextPath}/welcome"
-				style="border: none; width: 100%; min-height: 490px;"></iframe>
+				style="border: none; width: 100%; min-height: 550px;"></iframe>
 		</div>
 		<!-- /.content-wrapper -->
 		<!-- Main Footer -->

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.async.DeferredResult;
 import com.google.common.base.Predicates;
 import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -47,15 +48,16 @@ public class SwaggerConfig {
      */
     @SuppressWarnings("unchecked")
     @Bean
-    public Docket testApi() {
+    public Docket restApi() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
-                .groupName("test")
+                .apiInfo(apiInfo())
+                .groupName("rest")
                 .genericModelSubstitutes(DeferredResult.class)
                 .useDefaultResponseMessages(false)
                 .forCodeGeneration(true)
                 .pathMapping("/")// base，最终调用接口后会和paths拼接在一起
                 .select()
-                .paths(Predicates.or(PathSelectors.regex("/api/.*")))// 过滤的接口
+                //.paths(Predicates.or(PathSelectors.regex("/api/.*")))// 过滤的接口
                 .build();
         //.apiInfo(testApiInfo());
         return docket;
@@ -89,16 +91,16 @@ public class SwaggerConfig {
 //		return apiInfo;
 //	}
 
-//	@SuppressWarnings("deprecation")
-//	private ApiInfo demoApiInfo() {
-//		ApiInfo apiInfo = new ApiInfo("Demo相关接口", // 大标题
-//				"Demo相关接口，获取个数，获取列表，注意：", // 小标题
-//				"1.0", // 版本
-//				"http://412887952-qq-com.iteye.com/",
-//				"Angel", // 作者
-//				"北京知远信息科技有限公司", // 链接显示文字
-//				"http://www.kfit.com.cn/"// 网站链接
-//		);
-//		return apiInfo;
-//	}
+	@SuppressWarnings("deprecation")
+	private ApiInfo apiInfo() {
+		ApiInfo apiInfo = new ApiInfo("接口列表", // 大标题
+				"REST接口", // 小标题
+				"1.0", // 版本
+				"https://user.qzone.qq.com/369906430",
+				"nono", // 作者
+				"wiztek", // 链接显示文字
+				"http://www.baidu.com.cn/"// 网站链接
+		);
+		return apiInfo;
+	}
 }

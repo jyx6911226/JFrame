@@ -279,7 +279,8 @@
         },
         async: {
             enable: true,
-            url: "${pageContext.request.contextPath}/dictDetail/getListByDict/${obj.id}",
+            url: "${pageContext.request.contextPath}/dictDetails/${obj.id}",
+            type: "get",
             dataFilter: ajaxDataFilter
         },
         callback: {
@@ -290,7 +291,7 @@
         $("#node_id").val(treeNode.id);
         $("#node_name").val(treeNode.label);
         $("#resourceType").val(treeNode.resourceType);
-        var parent_ids = ",";
+        var parent_ids = "1,";
         for (var i = 0; i < treeNode.getPath().length - 1; i++) {
             parent_ids += treeNode.getPath()[i].id + ",";
         }
@@ -314,7 +315,11 @@
 <!--添加子节点 -->
 <script type="text/javascript">
     $("#add_child_node").click(function () {
+
         var pid = $("#node_id").val();
+        if(pid == ""){
+            return;
+        }
         var pname = $("#node_name").val();
         var pids = $("#parent_ids").val() + pid + ",";
         $("#node_id").val("");
@@ -362,5 +367,4 @@
         });
     });
 </script>
-</body>
-</html>
+</bo

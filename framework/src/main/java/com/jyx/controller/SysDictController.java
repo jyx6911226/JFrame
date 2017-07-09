@@ -4,6 +4,9 @@ import com.jyx.pojo.SysDict;
 import com.jyx.service.SysDictService;
 import com.jyx.util.jpa.SearchFilter;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,19 +24,27 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/dict")
 public class SysDictController {
     @Resource
     private SysDictService sysDictService;
     
     @RequiresPermissions(value={"SysDict-List"})
-    @RequestMapping("/initList")
+    @RequestMapping(value = "/dict/initList", method = RequestMethod.GET)
     public String initList() {
         return "dict/list";
     }
-    
+
+    @ApiOperation(value="查询字典列表", notes="根据实体查询分页排序字典列表")
+    @ApiImplicitParams({
+        @ApiImplicitParam(name = "searchObj", value = "字典查询实体SysDict", required = false, dataType = "SysDict"),
+        @ApiImplicitParam(name = "draw", value = "datatabels查询参数", required = false, dataType = "String"),
+        @ApiImplicitParam(name = "pageNo", value = "分页页数", required = false, dataType = "Integer"),
+        @ApiImplicitParam(name = "pageSize", value = "每页记录数", required = false, dataType = "Integer"),
+        @ApiImplicitParam(name = "orderColumn", value = "排序列", required = false, dataType = "String",defaultValue = "createdTime"),
+        @ApiImplicitParam(name = "orderDir", value = "排序方式", required = false, dataType = "String",defaultValue = "desc")
+    })
     @RequiresPermissions(value={"SysDict-Search-Interf"})
-    @RequestMapping("/getList")
+    @RequestMapping(value = "/dicts", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getList(SysDict searchObj,
                                               String draw,
@@ -71,34 +82,34 @@ public class SysDictController {
     }
 
     @RequiresPermissions(value={"SysDict-Add-Btn"})
-    @RequestMapping("/initAdd")
+    @RequestMapping(value = "/dict/initAdd", method = RequestMethod.GET)
     public String initAdd() {
         return "dict/add";
     }
 
     @RequiresPermissions(value={"SysDict-View"})
-    @RequestMapping("/initView/{id}")
+    @RequestMapping(value = "/dict/initView/{id}", method = RequestMethod.GET)
     public String initView(@PathVariable(value = "id") SysDict obj, Model model) {
         model.addAttribute("obj", obj);
         return "dict/view";
     }
 
     @RequiresPermissions(value={"SysDict-Update-Btn"})
-    @RequestMapping("/initEdit/{id}")
+    @RequestMapping(value = "/dict/initEdit/{id}", method = RequestMethod.GET)
     public String initEdit(@PathVariable(value = "id") SysDict obj, Model model) {
         model.addAttribute("obj", obj);
         return "dict/add";
     }
 
     @RequiresPermissions(value={"SysDict-UpdateDetail-Btn"})
-    @RequestMapping("/initEditDetail/{id}")
+    @RequestMapping(value = "/dict/initEditDetail/{id}",method = RequestMethod.GET)
     public String initEditDetail(@PathVariable(value = "id") SysDict obj, Model model) {
         model.addAttribute("obj", obj);
         return "dict/editDetail";
     }
     
     @RequiresPermissions(value={"SysDict-Add-Interf"})
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/dict",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysDict obj, Model model) {
         Map<String, Object> resdata = new HashMap<>();
@@ -114,7 +125,7 @@ public class SysDictController {
     }
     
     @RequiresPermissions(value={"SysDict-Del-Interf"})
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/dict", method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<String> ids) {
         Map<String, Object> resdata = new HashMap<>();
@@ -131,7 +142,7 @@ public class SysDictController {
     }
 
     @RequiresPermissions(value={"SysDict-List"})
-    @RequestMapping({"/validUnique"})
+    @RequestMapping(value = "/dict/validUnique", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Boolean> validUnique(SysDict searchObj) {
         boolean valid = false;

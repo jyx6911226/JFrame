@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/sysRole")
 public class SysRoleController {
 	
     @Resource
@@ -31,13 +30,13 @@ public class SysRoleController {
     private UserInfoService userInfoService;
     
     @RequiresPermissions(value={"SysRole-List"})
-    @RequestMapping("/initList")
+    @RequestMapping(value = "/sysRole/initList", method = RequestMethod.GET)
     public String initList() {
         return "sysrole/list";
     }
     
     @RequiresPermissions(value={"SysRole-Search-Interf"})
-    @RequestMapping("/getList")
+    @RequestMapping(value = "/sysRoles", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getList(SysRole searchObj,
                                        String draw,
@@ -76,7 +75,7 @@ public class SysRoleController {
     }
     
     @RequiresPermissions(value={"SysRole-SearchAll-Interf"})
-    @RequestMapping("/getAllList")
+    @RequestMapping(value = "/sysRoles/getAllList",method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getAllList() {
         Map<String, Object> resdata = new HashMap<>();
@@ -93,7 +92,7 @@ public class SysRoleController {
     }
     
     @RequiresPermissions(value={"SysRole-SearchByUserInfo-Interf"})
-    @RequestMapping("/getListByUserInfo/{id}")
+    @RequestMapping(value = "/sysRoles/getListByUserInfo/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getListByUserInfo(@PathVariable(value = "id") UserInfo obj, Model model) {
         model.addAttribute("obj", obj);
@@ -111,13 +110,13 @@ public class SysRoleController {
     }
     
     @RequiresPermissions(value={"SysRole-Add-Btn"})
-    @RequestMapping("/initAdd")
+    @RequestMapping(value = "/sysRole/initAdd", method = RequestMethod.GET)
     public String initAdd() {
         return "sysrole/add";
     }
     
     @RequiresPermissions(value={"SysRole-Add-Interf"})
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/sysRole",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> add(SysRole obj) {
         Map<String, Object> resdata = new HashMap<>();
@@ -133,28 +132,28 @@ public class SysRoleController {
     }
     
     @RequiresPermissions(value={"SysRole-View"})
-    @RequestMapping("/initView/{id}")
+    @RequestMapping(value = "/sysRole/initView/{id}", method = RequestMethod.GET)
     public String initView(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/view";
     }
     
     @RequiresPermissions(value={"SysRole-Update-Btn"})
-    @RequestMapping("/initEdit/{id}")
+    @RequestMapping(value = "/sysRole/initEdit/{id}", method = RequestMethod.GET)
     public String initEdit(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/add";
     }
 
     @RequiresPermissions(value={"SysRole-UpdatePermission-Btn"})
-    @RequestMapping("/initEditPermission/{id}")
+    @RequestMapping(value = "/sysRole/initEditPermission/{id}", method = RequestMethod.GET)
     public String initEditPermission(@PathVariable(value = "id") SysRole obj, Model model) {
         model.addAttribute("obj", obj);
         return "sysrole/editPermission";
     }
     
     @RequiresPermissions(value={"SysRole-SaveRoleList-Interf"})
-    @RequestMapping(value = "/saveRoleList/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/sysRoles/{id}",method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> saveRoleList(@PathVariable(value = "id") UserInfo obj,@RequestBody List<Long> rids, Model model) {
         Map<String, Object> resdata = new HashMap<>();
@@ -185,7 +184,7 @@ public class SysRoleController {
     }
 
     @RequiresPermissions(value={"SysRole-Del-Interf"})
-    @RequestMapping(method = RequestMethod.DELETE)
+    @RequestMapping(value = "/sysRoles", method = RequestMethod.DELETE)
     @ResponseBody
     public Map<String, Object> delete(@RequestBody List<SysRole> objs) {
         Map<String, Object> resdata = new HashMap<>();
@@ -201,7 +200,7 @@ public class SysRoleController {
     }
     
     @RequiresPermissions(value={"SysRole-List"})
-    @RequestMapping({"/validUnique"})
+    @RequestMapping(value = "/sysRoles/validUnique", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Boolean> validUnique(SysRole searchObj) {
         boolean valid = false;

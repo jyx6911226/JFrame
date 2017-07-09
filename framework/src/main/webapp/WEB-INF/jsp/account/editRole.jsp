@@ -99,7 +99,8 @@
         },
         async: {
             enable: true,
-            url: "${pageContext.request.contextPath}/sysRole/getAllList",
+            url: "${pageContext.request.contextPath}/sysRoles/getAllList",
+            type:"get",
             dataFilter: ajaxDataFilter
         },
         callback: {
@@ -108,8 +109,8 @@
     function initZTreeCheck(id) {
         var zTree = $.fn.zTree.getZTreeObj("treeDemo");
         $.ajax({
-            type: "post",
-            url: "${pageContext.request.contextPath}/sysRole/getListByUserInfo/${obj.id}",
+            type: "get",
+            url: "${pageContext.request.contextPath}/sysRoles/getListByUserInfo/${obj.id}",
             contentType:"application/json",
             dataType: "json",
             success: function(result) {
@@ -144,7 +145,7 @@
         });
         $.ajax({
             type: "post",
-            url: "${pageContext.request.contextPath}/sysRole/saveRoleList/${obj.id}",
+            url: "${pageContext.request.contextPath}/sysRoles/${obj.id}",
             data: JSON.stringify(rids),
             contentType:"application/json",
             dataType: "json",

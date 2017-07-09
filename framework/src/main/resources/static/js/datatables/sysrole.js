@@ -10,8 +10,8 @@ $(function (){
 			//封装请求参数
 			var param = userManage.getQueryCondition(data);
 			$.ajax({
-		            type: "post",
-		            url: "./getList",
+		            type: "get",
+		            url: "../sysRoles",
 		            cache : false,	//禁用缓存
 		            data: param,	//传入已封装的参数
 		            dataType: "json",
